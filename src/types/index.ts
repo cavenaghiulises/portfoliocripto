@@ -14,7 +14,7 @@ export interface InvestmentOption {
   id: string;
   name: string;
   ticker: string;
-  type: 'Stocks' | 'Bonds' | 'Cash';
+  type: 'Stocks' | 'Bonds' | 'Cash' | 'Crypto';
   description: string;
 }
 
@@ -23,6 +23,7 @@ export interface PortfolioAllocation {
   stocks: number;
   bonds: number;
   cash: number;
+  crypto: number;
   description: string;
   diversificationTips: string[];
 }

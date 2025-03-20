@@ -20,6 +20,8 @@ const InvestmentCard = ({ investment, className, delay = 0 }: InvestmentCardProp
         return "bg-bonds/10 border-bonds/20";
       case "Cash":
         return "bg-cash/10 border-cash/20";
+      case "Crypto":
+        return "bg-crypto/10 border-crypto/20";
       default:
         return "bg-muted border-muted";
     }
@@ -33,6 +35,8 @@ const InvestmentCard = ({ investment, className, delay = 0 }: InvestmentCardProp
         return "text-bonds";
       case "Cash":
         return "text-cash";
+      case "Crypto":
+        return "text-crypto";
       default:
         return "text-foreground";
     }
@@ -46,6 +50,8 @@ const InvestmentCard = ({ investment, className, delay = 0 }: InvestmentCardProp
         return "Bonos";
       case "Cash":
         return "Efectivo";
+      case "Crypto":
+        return "Criptomonedas";
       default:
         return type;
     }

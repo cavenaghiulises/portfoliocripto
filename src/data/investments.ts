@@ -4,52 +4,52 @@ import { InvestmentOption, PortfolioAllocation, Question } from "@/types";
 export const riskAssessmentQuestions: Question[] = [
   {
     id: 1,
-    text: "How long do you plan to invest before needing the money?",
+    text: "¿Por cuánto tiempo planeas invertir antes de necesitar el dinero?",
     options: [
-      { text: "Less than 3 years", score: 1 },
-      { text: "3-5 years", score: 2 },
-      { text: "5-10 years", score: 3 },
-      { text: "More than 10 years", score: 4 },
+      { text: "De 3 a 6 meses", score: 1 },
+      { text: "De 6 meses a 1 año", score: 2 },
+      { text: "De 1 a 5 años", score: 3 },
+      { text: "Más de 5 años", score: 4 },
     ],
   },
   {
     id: 2,
-    text: "If your investment lost 20% of its value in a month, what would you do?",
+    text: "Si tu inversión perdiera el 20% de su valor en un mes, ¿qué harías?",
     options: [
-      { text: "Sell everything to prevent further losses", score: 1 },
-      { text: "Sell some investments to reduce risk", score: 2 },
-      { text: "Do nothing and wait for recovery", score: 3 },
-      { text: "Buy more while prices are lower", score: 4 },
+      { text: "Vender todo para evitar más pérdidas", score: 1 },
+      { text: "Vender algunas inversiones para reducir el riesgo", score: 2 },
+      { text: "No hacer nada y esperar la recuperación", score: 3 },
+      { text: "Comprar más mientras los precios están bajos", score: 4 },
     ],
   },
   {
     id: 3,
-    text: "Which best describes your investment knowledge?",
+    text: "¿Qué opción describe mejor tu conocimiento sobre inversiones?",
     options: [
-      { text: "I'm new to investing", score: 1 },
-      { text: "I understand the basics", score: 2 },
-      { text: "I'm comfortable with various investment strategies", score: 3 },
-      { text: "I have extensive investment experience", score: 4 },
+      { text: "Soy nuevo en inversiones", score: 1 },
+      { text: "Entiendo los conceptos básicos", score: 2 },
+      { text: "Me siento cómodo con varias estrategias de inversión", score: 3 },
+      { text: "Tengo amplia experiencia en inversiones", score: 4 },
     ],
   },
   {
     id: 4,
-    text: "What is your primary investment goal?",
+    text: "¿Cuál es tu principal objetivo de inversión?",
     options: [
-      { text: "Preserving capital", score: 1 },
-      { text: "Generating income", score: 2 },
-      { text: "Balanced growth and income", score: 3 },
-      { text: "Maximizing long-term growth", score: 4 },
+      { text: "Preservar el capital", score: 1 },
+      { text: "Generar ingresos", score: 2 },
+      { text: "Equilibrio entre crecimiento e ingresos", score: 3 },
+      { text: "Maximizar el crecimiento a largo plazo", score: 4 },
     ],
   },
   {
     id: 5,
-    text: "How much fluctuation in your investment value can you tolerate?",
+    text: "¿Cuánta fluctuación en el valor de tu inversión podés tolerar?",
     options: [
-      { text: "Minimal fluctuations", score: 1 },
-      { text: "Small fluctuations", score: 2 },
-      { text: "Moderate fluctuations", score: 3 },
-      { text: "Large fluctuations for potential higher returns", score: 4 },
+      { text: "Fluctuaciones mínimas", score: 1 },
+      { text: "Pequeñas fluctuaciones", score: 2 },
+      { text: "Fluctuaciones moderadas", score: 3 },
+      { text: "Grandes fluctuaciones para potenciales rendimientos mayores", score: 4 },
     ],
   },
 ];
@@ -64,40 +64,46 @@ export const portfolioAllocations: Record<string, PortfolioAllocation> = {
   Low: {
     riskLevel: 'Low',
     stocks: 20,
-    bonds: 60,
+    bonds: 50,
     cash: 20,
-    description: "This conservative portfolio prioritizes capital preservation and income over growth. It's designed for investors with a shorter time horizon or lower risk tolerance.",
+    crypto: 10,
+    description: "Este portafolio conservador prioriza la preservación del capital y los ingresos sobre el crecimiento. Está diseñado para inversores con un horizonte temporal más corto o una menor tolerancia al riesgo.",
     diversificationTips: [
-      "Consider high-quality, dividend-paying stocks for the equity portion",
-      "Focus on short to intermediate-term high-grade bonds",
-      "Maintain adequate cash reserves for emergencies and opportunities",
-      "Geographic diversification can help reduce country-specific risks"
+      "Considerá acciones de alta calidad y que paguen dividendos para la porción de renta variable",
+      "Enfocate en bonos de alta calidad a corto y mediano plazo",
+      "Mantené reservas adecuadas de efectivo para emergencias y oportunidades",
+      "La diversificación geográfica puede ayudar a reducir riesgos específicos de cada país",
+      "Limitá la exposición a criptomonedas a las de mayor capitalización de mercado"
     ]
   },
   Moderate: {
     riskLevel: 'Moderate',
-    stocks: 60,
-    bonds: 30,
+    stocks: 50,
+    bonds: 25,
     cash: 10,
-    description: "This balanced portfolio aims to provide growth and income with moderate risk. It suits investors with medium-term horizons who can tolerate some market fluctuations.",
+    crypto: 15,
+    description: "Este portafolio balanceado busca proporcionar crecimiento e ingresos con un riesgo moderado. Es adecuado para inversores con horizontes a mediano plazo que pueden tolerar algunas fluctuaciones del mercado.",
     diversificationTips: [
-      "Diversify across large, mid, and small-cap stocks",
-      "Consider adding international exposure through developed markets",
-      "Include both government and corporate bonds for fixed income diversity",
-      "Rebalance annually to maintain target allocations"
+      "Diversificá entre acciones de grande, mediana y pequeña capitalización",
+      "Considerá añadir exposición internacional a través de mercados desarrollados",
+      "Incluí bonos tanto gubernamentales como corporativos para diversificar la renta fija",
+      "Reequilibrá anualmente para mantener las asignaciones objetivo",
+      "Explorá diferentes sectores de criptomonedas como DeFi, NFTs y blockchains de capa 1"
     ]
   },
   High: {
     riskLevel: 'High',
-    stocks: 80,
-    bonds: 15,
+    stocks: 60,
+    bonds: 10,
     cash: 5,
-    description: "This growth-oriented portfolio maximizes long-term appreciation potential. It's suitable for investors with longer time horizons who can withstand significant market volatility.",
+    crypto: 25,
+    description: "Este portafolio orientado al crecimiento maximiza el potencial de apreciación a largo plazo. Es adecuado para inversores con horizontes temporales más largos que pueden soportar una volatilidad significativa del mercado.",
     diversificationTips: [
-      "Include exposure to emerging markets for higher growth potential",
-      "Consider sector diversification across technology, healthcare, and other growth areas",
-      "Add small allocations to alternative investments like REITs",
-      "Maintain disciplined investing during market downturns to benefit from lower prices"
+      "Incluí exposición a mercados emergentes para un mayor potencial de crecimiento",
+      "Considerá la diversificación por sectores entre tecnología, salud y otras áreas de crecimiento",
+      "Agregá pequeñas asignaciones a inversiones alternativas como REITs",
+      "Mantené una inversión disciplinada durante las caídas del mercado para beneficiarte de precios más bajos",
+      "Diversificá entre diferentes categorías de activos digitales, incluyendo tokens de utilidad y tokens de gobierno"
     ]
   }
 };
@@ -109,35 +115,35 @@ export const investmentOptions: InvestmentOption[] = [
     name: "Vanguard Total Stock Market ETF",
     ticker: "VTI",
     type: "Stocks",
-    description: "Provides broad exposure to the entire U.S. equity market, including small, mid, and large-cap growth and value stocks."
+    description: "Proporciona amplia exposición a todo el mercado de renta variable de EE.UU., incluyendo acciones de pequeña, mediana y gran capitalización, tanto de crecimiento como de valor."
   },
   {
     id: "stock-2",
     name: "iShares Core S&P 500 ETF",
     ticker: "IVV",
     type: "Stocks",
-    description: "Tracks the S&P 500 Index, offering exposure to 500 large U.S. companies representing approximately 80% of the U.S. market capitalization."
+    description: "Sigue el índice S&P 500, ofreciendo exposición a 500 grandes empresas estadounidenses que representan aproximadamente el 80% de la capitalización del mercado de EE.UU."
   },
   {
     id: "stock-3",
     name: "Vanguard FTSE Developed Markets ETF",
     ticker: "VEA",
     type: "Stocks",
-    description: "Provides exposure to established international markets outside the U.S., including developed markets in Europe, Australia, Asia, and the Far East."
+    description: "Proporciona exposición a mercados internacionales establecidos fuera de EE.UU., incluyendo mercados desarrollados en Europa, Australia, Asia y el Lejano Oriente."
   },
   {
     id: "stock-4",
     name: "Schwab U.S. Dividend Equity ETF",
     ticker: "SCHD",
     type: "Stocks",
-    description: "Focuses on high-quality, dividend-paying U.S. stocks with a record of consistently raising their dividends."
+    description: "Se centra en acciones estadounidenses de alta calidad que pagan dividendos con un historial de aumento constante de sus dividendos."
   },
   {
     id: "stock-5",
     name: "Vanguard Growth ETF",
     ticker: "VUG",
     type: "Stocks",
-    description: "Invests in large U.S. companies that are expected to grow faster than the market average."
+    description: "Invierte en grandes empresas estadounidenses que se espera que crezcan más rápido que el promedio del mercado."
   },
   
   // Bonds
@@ -146,35 +152,35 @@ export const investmentOptions: InvestmentOption[] = [
     name: "Vanguard Total Bond Market ETF",
     ticker: "BND",
     type: "Bonds",
-    description: "Provides broad exposure to U.S. investment-grade bonds with a focus on treasuries, corporate bonds, and mortgage-backed securities."
+    description: "Proporciona amplia exposición a bonos de grado de inversión de EE.UU. con un enfoque en bonos del tesoro, bonos corporativos y valores respaldados por hipotecas."
   },
   {
     id: "bond-2",
     name: "iShares Core U.S. Aggregate Bond ETF",
     ticker: "AGG",
     type: "Bonds",
-    description: "Tracks the Bloomberg U.S. Aggregate Bond Index, representing the U.S. investment-grade bond market."
+    description: "Sigue el índice Bloomberg U.S. Aggregate Bond, representando el mercado de bonos de grado de inversión de EE.UU."
   },
   {
     id: "bond-3",
     name: "Vanguard Short-Term Bond ETF",
     ticker: "BSV",
     type: "Bonds",
-    description: "Invests in U.S. government and corporate bonds with maturities between 1-5 years, offering lower interest rate risk than longer-term bonds."
+    description: "Invierte en bonos gubernamentales y corporativos de EE.UU. con vencimientos entre 1-5 años, ofreciendo menor riesgo de tasa de interés que los bonos a más largo plazo."
   },
   {
     id: "bond-4",
     name: "iShares TIPS Bond ETF",
     ticker: "TIP",
     type: "Bonds",
-    description: "Invests in Treasury Inflation-Protected Securities (TIPS), which provide protection against inflation."
+    description: "Invierte en Valores del Tesoro Protegidos contra la Inflación (TIPS), que brindan protección contra la inflación."
   },
   {
     id: "bond-5",
     name: "Vanguard Intermediate-Term Corporate Bond ETF",
     ticker: "VCIT",
     type: "Bonds",
-    description: "Focuses on investment-grade corporate bonds with maturities between 5-10 years."
+    description: "Se centra en bonos corporativos de grado de inversión con vencimientos entre 5-10 años."
   },
   
   // Cash/Money Market
@@ -183,34 +189,71 @@ export const investmentOptions: InvestmentOption[] = [
     name: "Vanguard Federal Money Market Fund",
     ticker: "VMFXX",
     type: "Cash",
-    description: "Invests in short-term U.S. government securities and repurchase agreements, offering stability and liquidity."
+    description: "Invierte en valores gubernamentales a corto plazo de EE.UU. y acuerdos de recompra, ofreciendo estabilidad y liquidez."
   },
   {
     id: "cash-2",
     name: "SPDR Bloomberg 1-3 Month T-Bill ETF",
     ticker: "BIL",
     type: "Cash",
-    description: "Invests in U.S. Treasury Bills with maturities between 1-3 months, offering extremely low risk and high liquidity."
+    description: "Invierte en Letras del Tesoro de EE.UU. con vencimientos entre 1-3 meses, ofreciendo un riesgo extremadamente bajo y alta liquidez."
   },
   {
     id: "cash-3",
     name: "JPMorgan Ultra-Short Income ETF",
     ticker: "JPST",
     type: "Cash",
-    description: "Invests in a diversified portfolio of short-term, investment-grade fixed income securities, aiming for higher yield than money market funds."
+    description: "Invierte en una cartera diversificada de valores de renta fija a corto plazo de grado de inversión, con el objetivo de lograr un rendimiento mayor que los fondos del mercado monetario."
   },
   {
     id: "cash-4",
     name: "Vanguard Short-Term Treasury ETF",
     ticker: "VGSH",
     type: "Cash",
-    description: "Provides exposure to short-term U.S. Treasury bonds with maturities between 1-3 years."
+    description: "Proporciona exposición a bonos del Tesoro de EE.UU. a corto plazo con vencimientos entre 1-3 años."
   },
   {
     id: "cash-5",
     name: "Fidelity® Government Money Market Fund",
     ticker: "SPAXX",
     type: "Cash",
-    description: "Invests in cash, U.S. government securities and repurchase agreements that are collateralized fully by cash or government securities."
+    description: "Invierte en efectivo, valores gubernamentales de EE.UU. y acuerdos de recompra que están totalmente garantizados por efectivo o valores gubernamentales."
+  },
+  
+  // Crypto
+  {
+    id: "crypto-1",
+    name: "Bitcoin",
+    ticker: "BTC",
+    type: "Crypto",
+    description: "La primera y más grande criptomoneda por capitalización de mercado. A menudo considerada como 'oro digital' y reserva de valor."
+  },
+  {
+    id: "crypto-2",
+    name: "Ethereum",
+    ticker: "ETH",
+    type: "Crypto",
+    description: "Una plataforma blockchain programable que permite aplicaciones descentralizadas, contratos inteligentes y finanzas descentralizadas (DeFi)."
+  },
+  {
+    id: "crypto-3",
+    name: "Solana",
+    ticker: "SOL",
+    type: "Crypto",
+    description: "Blockchain de alta performance y baja latencia que facilita el desarrollo de aplicaciones descentralizadas y defi."
+  },
+  {
+    id: "crypto-4",
+    name: "Binance Coin",
+    ticker: "BNB",
+    type: "Crypto",
+    description: "El token nativo del ecosistema Binance, utilizado para pagar tarifas de transacción y participar en ofertas de tokens."
+  },
+  {
+    id: "crypto-5",
+    name: "Stablecoin Index (USDC, USDT, DAI)",
+    ticker: "STABLES",
+    type: "Crypto",
+    description: "Canasta de stablecoins respaldadas por dólar que ofrecen estabilidad en un mercado volátil, útiles para preservar capital durante periodos de incertidumbre."
   }
 ];
