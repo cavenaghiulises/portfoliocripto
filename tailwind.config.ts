@@ -26,11 +26,11 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#4335A7", // Violeta oscuro
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#80C4E9", // Azul claro
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -42,7 +42,7 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
+          DEFAULT: "#FFF6E9", // Beige claro
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -63,10 +63,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom investment colors
-        stocks: "#34C759",
-        bonds: "#5E5CE6",
-        cash: "#FF9500",
+        // Custom investment colors - actualizado para cryptos
+        stocks: "#4335A7", // Violeta oscuro (primario)
+        bonds: "#80C4E9", // Azul claro (secundario) 
+        cash: "#FFF6E9", // Beige claro (acento)
+        crypto: "#FF7F3E", // Naranja (acento fuerte)
       },
       fontFamily: {
         sans: ["SF Pro Display", "system-ui", "sans-serif"],

@@ -14,16 +14,17 @@ export interface InvestmentOption {
   id: string;
   name: string;
   ticker: string;
-  type: 'Stocks' | 'Bonds' | 'Cash' | 'Crypto';
+  type: 'Bitcoin' | 'Ethereum' | 'Altcoin' | 'DeFi' | 'Stablecoin';
   description: string;
 }
 
 export interface PortfolioAllocation {
   riskLevel: RiskLevel;
-  stocks: number;
-  bonds: number;
-  cash: number;
-  crypto: number;
+  bitcoin: number;
+  ethereum: number;
+  altcoins: number;
+  defi: number;
+  stablecoins: number;
   description: string;
   diversificationTips: string[];
 }

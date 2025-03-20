@@ -13,47 +13,30 @@ const InvestmentCard = ({ investment, className, delay = 0 }: InvestmentCardProp
   const [isHovered, setIsHovered] = useState(false);
 
   const getBgColor = (type: string) => {
-    switch (type) {
-      case "Stocks":
-        return "bg-stocks/10 border-stocks/20";
-      case "Bonds":
-        return "bg-bonds/10 border-bonds/20";
-      case "Cash":
-        return "bg-cash/10 border-cash/20";
-      case "Crypto":
-        return "bg-crypto/10 border-crypto/20";
-      default:
-        return "bg-muted border-muted";
-    }
+    // Como solo manejamos criptomonedas, usamos los colores de la paleta nueva
+    return "bg-crypto/10 border-crypto/20";
   };
 
   const getTextColor = (type: string) => {
-    switch (type) {
-      case "Stocks":
-        return "text-stocks";
-      case "Bonds":
-        return "text-bonds";
-      case "Cash":
-        return "text-cash";
-      case "Crypto":
-        return "text-crypto";
-      default:
-        return "text-foreground";
-    }
+    // Usamos el color naranja para todas las criptos
+    return "text-crypto";
   };
 
   const getTypeName = (type: string) => {
+    // Podríamos clasificar diferentes tipos de criptomonedas si es necesario
     switch (type) {
-      case "Stocks":
-        return "Acciones";
-      case "Bonds":
-        return "Bonos";
-      case "Cash":
-        return "Efectivo";
-      case "Crypto":
-        return "Criptomonedas";
+      case "Bitcoin":
+        return "Bitcoin";
+      case "Ethereum":
+        return "Ethereum";
+      case "Altcoin":
+        return "Altcoin";
+      case "DeFi":
+        return "DeFi";
+      case "Stablecoin":
+        return "Stablecoin";
       default:
-        return type;
+        return "Criptomoneda";
     }
   };
 
