@@ -68,6 +68,7 @@ export const portfolioAllocations: Record<string, PortfolioAllocation> = {
     altcoins: 10,
     defi: 5,
     stablecoins: 35,
+    memecoins: 0,
     description: "Este portafolio conservador prioriza la preservación del capital y un riesgo controlado. Se concentra principalmente en Bitcoin, Ethereum y stablecoins para mayor estabilidad.",
     diversificationTips: [
       "Mantené un alto porcentaje en stablecoins para proteger tu capital",
@@ -83,30 +84,32 @@ export const portfolioAllocations: Record<string, PortfolioAllocation> = {
     ethereum: 25,
     altcoins: 20,
     defi: 15,
-    stablecoins: 15,
-    description: "Este portafolio balanceado busca equilibrar crecimiento y seguridad. Distribuye el riesgo entre las principales criptomonedas y una exposición controlada a altcoins y DeFi.",
+    stablecoins: 10,
+    memecoins: 5,
+    description: "Este portafolio balanceado busca equilibrar crecimiento y seguridad. Distribuye el riesgo entre las principales criptomonedas y una exposición controlada a altcoins, DeFi y una pequeña porción en memecoins para potencial crecimiento.",
     diversificationTips: [
       "Balanceá tu exposición entre Bitcoin y Ethereum para diversificar tu base principal",
       "Explorá altcoins establecidas con casos de uso comprobados",
       "Investigá proyectos DeFi con auditorías de seguridad y buena reputación",
-      "Reequilibrá periódicamente tu portafolio para mantener las proporciones objetivo",
-      "Considerá estrategias de yield farming conservadoras con stablecoins"
+      "Destiná un pequeño porcentaje a memecoins con comunidades activas",
+      "Reequilibrá periódicamente tu portafolio para mantener las proporciones objetivo"
     ]
   },
   High: {
     riskLevel: 'High',
-    bitcoin: 20,
-    ethereum: 20,
-    altcoins: 30,
+    bitcoin: 15,
+    ethereum: 15,
+    altcoins: 25,
     defi: 25,
     stablecoins: 5,
-    description: "Este portafolio agresivo maximiza el potencial de crecimiento con mayor exposición a altcoins y DeFi. Es ideal para inversores con alto conocimiento del mercado y tolerancia al riesgo.",
+    memecoins: 15,
+    description: "Este portafolio agresivo maximiza el potencial de crecimiento con mayor exposición a altcoins, DeFi y memecoins. Es ideal para inversores con alto conocimiento del mercado y tolerancia al riesgo.",
     diversificationTips: [
       "Mantené Bitcoin y Ethereum como base de tu portafolio para cierta estabilidad",
-      "Diversificá entre múltiples altcoins de distintos sectores (Layer 1, Layer 2, Gaming, etc.)",
+      "Diversificá entre múltiples altcoins de distintos sectores",
       "Aprovechá las oportunidades en DeFi con estrategias de farming más agresivas",
-      "Investigá profundamente los proyectos antes de invertir, priorizando equipos sólidos",
-      "Considerá pequeñas asignaciones a proyectos emergentes con alto potencial"
+      "Invertí en memecoins con comunidades activas y potencial de crecimiento viral",
+      "Considerá realizar toma de ganancias periódicamente en tus posiciones más volátiles"
     ]
   }
 };
@@ -267,5 +270,42 @@ export const investmentOptions: InvestmentOption[] = [
     ticker: "STABLES",
     type: "Stablecoin",
     description: "Exposición diversificada a múltiples stablecoins para minimizar el riesgo específico de cada protocolo."
+  },
+  
+  // Memecoins
+  {
+    id: "memecoin-1",
+    name: "Dogecoin",
+    ticker: "DOGE",
+    type: "Memecoin",
+    description: "La memecoin original basada en el meme del perro Shiba Inu 'Doge'. Tiene una comunidad grande y activa."
+  },
+  {
+    id: "memecoin-2",
+    name: "Shiba Inu",
+    ticker: "SHIB",
+    type: "Memecoin",
+    description: "Token inspirado en Dogecoin que ha evolucionado para desarrollar un ecosistema con intercambio descentralizado y otros productos."
+  },
+  {
+    id: "memecoin-3",
+    name: "Pepe",
+    ticker: "PEPE",
+    type: "Memecoin",
+    description: "Memecoin basada en el popular meme del personaje Pepe the Frog, con una comunidad activa y fuerte presencia en redes sociales."
+  },
+  {
+    id: "memecoin-4",
+    name: "Floki",
+    ticker: "FLOKI",
+    type: "Memecoin",
+    description: "Proyecto de memecoin con el nombre del perro de Elon Musk, que busca combinar el poder de los memes con utilidad real."
+  },
+  {
+    id: "memecoin-5",
+    name: "Bonk",
+    ticker: "BONK",
+    type: "Memecoin",
+    description: "Token memético nativo del ecosistema Solana con una fuerte comunidad y enfoque en la integración con proyectos DeFi dentro de Solana."
   }
 ];

@@ -32,6 +32,7 @@ const PortfolioRecommendation = ({
     { name: "Altcoins", value: portfolio.altcoins, color: "#FFF6E9" },
     { name: "DeFi", value: portfolio.defi, color: "#FF7F3E" },
     { name: "Stablecoins", value: portfolio.stablecoins, color: "#9B8ADB" },
+    { name: "Memecoins", value: portfolio.memecoins, color: "#FF9E9E" },
   ];
 
   const getInvestmentsByType = (type: InvestmentOption["type"]) => {
@@ -45,6 +46,7 @@ const PortfolioRecommendation = ({
   const altcoinOptions = getInvestmentsByType("Altcoin");
   const defiOptions = getInvestmentsByType("DeFi");
   const stablecoinOptions = getInvestmentsByType("Stablecoin");
+  const memecoinOptions = getInvestmentsByType("Memecoin");
 
   return (
     <div
@@ -158,7 +160,7 @@ const PortfolioRecommendation = ({
           </div>
         </div>
 
-        <div>
+        <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Stablecoins ({portfolio.stablecoins}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stablecoinOptions.map((option, index) => (
@@ -170,6 +172,21 @@ const PortfolioRecommendation = ({
             ))}
           </div>
         </div>
+
+        {portfolio.memecoins > 0 && (
+          <div className="mb-8">
+            <h4 className="text-lg font-medium mb-4">Memecoins ({portfolio.memecoins}%)</h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {memecoinOptions.map((option, index) => (
+                <InvestmentCard
+                  key={option.id}
+                  investment={option}
+                  delay={0.1 * (index + 15)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="text-center mb-8">
