@@ -27,9 +27,9 @@ const PortfolioRecommendation = ({
   }, []);
 
   const chartData = [
-    { name: "Stocks", value: portfolio.stocks, color: "#34C759" },
-    { name: "Bonds", value: portfolio.bonds, color: "#5E5CE6" },
-    { name: "Cash", value: portfolio.cash, color: "#FF9500" },
+    { name: "Acciones", value: portfolio.stocks, color: "#34C759" },
+    { name: "Bonos", value: portfolio.bonds, color: "#5E5CE6" },
+    { name: "Efectivo", value: portfolio.cash, color: "#FF9500" },
   ];
 
   const getInvestmentsByType = (type: InvestmentOption["type"]) => {
@@ -51,10 +51,10 @@ const PortfolioRecommendation = ({
     >
       <div className="text-center mb-12">
         <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-          Your Personalized Portfolio
+          Tu Portafolio Personalizado
         </div>
         <h2 className="text-3xl font-semibold mb-3">
-          {riskLevel} Risk Portfolio
+          Portafolio de Riesgo {riskLevel === 'Low' ? 'Bajo' : riskLevel === 'Moderate' ? 'Moderado' : 'Alto'}
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
           {portfolio.description}
@@ -63,13 +63,13 @@ const PortfolioRecommendation = ({
 
       <div className="bg-white/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-sm mb-12">
         <h3 className="text-xl font-medium mb-6 text-center">
-          Recommended Asset Allocation
+          Asignación de Activos Recomendada
         </h3>
         <AllocationChart data={chartData} />
       </div>
 
       <div className="mb-12">
-        <h3 className="text-xl font-medium mb-6">Diversification Tips</h3>
+        <h3 className="text-xl font-medium mb-6">Consejos de Diversificación</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {portfolio.diversificationTips.map((tip, index) => (
             <div
@@ -100,10 +100,10 @@ const PortfolioRecommendation = ({
       </div>
 
       <div className="mb-16">
-        <h3 className="text-xl font-medium mb-6">Recommended Investments</h3>
+        <h3 className="text-xl font-medium mb-6">Inversiones Recomendadas</h3>
 
         <div className="mb-8">
-          <h4 className="text-lg font-medium mb-4">Stocks ({portfolio.stocks}%)</h4>
+          <h4 className="text-lg font-medium mb-4">Acciones ({portfolio.stocks}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stockOptions.map((option, index) => (
               <InvestmentCard
@@ -116,7 +116,7 @@ const PortfolioRecommendation = ({
         </div>
 
         <div className="mb-8">
-          <h4 className="text-lg font-medium mb-4">Bonds ({portfolio.bonds}%)</h4>
+          <h4 className="text-lg font-medium mb-4">Bonos ({portfolio.bonds}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {bondOptions.map((option, index) => (
               <InvestmentCard
@@ -129,7 +129,7 @@ const PortfolioRecommendation = ({
         </div>
 
         <div>
-          <h4 className="text-lg font-medium mb-4">Cash ({portfolio.cash}%)</h4>
+          <h4 className="text-lg font-medium mb-4">Efectivo ({portfolio.cash}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {cashOptions.map((option, index) => (
               <InvestmentCard
@@ -147,7 +147,7 @@ const PortfolioRecommendation = ({
           onClick={onStartOver}
           className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-sm"
         >
-          Start Over
+          Comenzar de Nuevo
         </button>
       </div>
     </div>

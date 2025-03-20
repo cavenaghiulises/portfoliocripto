@@ -61,7 +61,7 @@ const RiskAssessment = ({ onComplete }: RiskAssessmentProps) => {
           />
         </div>
         <div className="mt-2 text-right text-sm text-muted-foreground">
-          Question {currentQuestionIndex + 1} of {riskAssessmentQuestions.length}
+          Pregunta {currentQuestionIndex + 1} de {riskAssessmentQuestions.length}
         </div>
       </div>
 
@@ -94,7 +94,7 @@ const RiskAssessment = ({ onComplete }: RiskAssessmentProps) => {
               onClick={handlePrevious}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              Previous
+              Anterior
             </button>
           )}
           <div></div>

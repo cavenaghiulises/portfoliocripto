@@ -37,37 +37,37 @@ const Index = () => {
           <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
             <section className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
               <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6 animate-fadeIn">
-                Investment Portfolio Advisor
+                Asesor de Portafolio de Inversiones
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight animate-fadeIn" style={{ animationDelay: "0.1s" }}>
-                Design Your Perfect Investment Portfolio
+                Diseñá tu Portafolio de Inversión Perfecto
               </h1>
               <p className="text-xl text-muted-foreground mb-8 animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-                Answer a few questions about your investment goals and risk tolerance,
-                and we'll create a personalized portfolio recommendation.
+                Respondé algunas preguntas sobre tus objetivos de inversión y tolerancia al riesgo,
+                y crearemos una recomendación de portafolio personalizada.
               </p>
               <button
                 onClick={handleStartAssessment}
                 className="px-8 py-4 bg-primary text-white rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fadeIn"
                 style={{ animationDelay: "0.3s" }}
               >
-                Get Started
+                Comenzar
               </button>
             </section>
             
             <section className="mb-24">
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-semibold mb-4">How It Works</h2>
+                <h2 className="text-3xl font-semibold mb-4">Cómo Funciona</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Our intelligent portfolio advisor creates personalized recommendations based on your unique situation.
+                  Nuestro asesor inteligente de portafolio crea recomendaciones personalizadas basadas en tu situación única.
                 </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
-                    title: "Answer Questions",
-                    description: "Complete our risk assessment questionnaire to help us understand your investment goals and risk tolerance.",
+                    title: "Respondé Preguntas",
+                    description: "Completá nuestro cuestionario de evaluación de riesgo para ayudarnos a entender tus objetivos de inversión y tolerancia al riesgo.",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                         <circle cx="12" cy="12" r="10" />
@@ -77,8 +77,8 @@ const Index = () => {
                     )
                   },
                   {
-                    title: "Get Recommendations",
-                    description: "Receive a personalized portfolio allocation with specific investment suggestions tailored to your profile.",
+                    title: "Obtené Recomendaciones",
+                    description: "Recibí una asignación de portafolio personalizada con sugerencias de inversión específicas adaptadas a tu perfil.",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                         <path d="M21 8v13H3V8" />
@@ -88,8 +88,8 @@ const Index = () => {
                     )
                   },
                   {
-                    title: "Build Your Future",
-                    description: "Implement your personalized portfolio strategy with confidence, knowing it's aligned with your financial goals.",
+                    title: "Construí tu Futuro",
+                    description: "Implementá tu estrategia de portafolio personalizada con confianza, sabiendo que está alineada con tus objetivos financieros.",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                         <path d="M12 2v20" />
@@ -122,29 +122,29 @@ const Index = () => {
             
             <section className="max-w-3xl mx-auto mb-24">
               <div className="text-center mb-10">
-                <h2 className="text-3xl font-semibold mb-4">Why Choose Us</h2>
+                <h2 className="text-3xl font-semibold mb-4">Por Qué Elegirnos</h2>
                 <p className="text-muted-foreground">
-                  We provide expert guidance to help you make informed investment decisions.
+                  Brindamos asesoramiento experto para ayudarte a tomar decisiones de inversión informadas.
                 </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                   {
-                    title: "Personalized Recommendations",
-                    description: "Get portfolio recommendations tailored to your unique financial situation and goals."
+                    title: "Recomendaciones Personalizadas",
+                    description: "Obtené recomendaciones de portafolio adaptadas a tu situación financiera única y objetivos."
                   },
                   {
-                    title: "Diversification Strategy",
-                    description: "Learn how to properly diversify your investments to reduce risk while maintaining growth potential."
+                    title: "Estrategia de Diversificación",
+                    description: "Aprendé cómo diversificar adecuadamente tus inversiones para reducir el riesgo manteniendo el potencial de crecimiento."
                   },
                   {
-                    title: "Cost-Efficient Options",
-                    description: "We recommend low-cost investment options to maximize your returns over time."
+                    title: "Opciones Eficientes en Costos",
+                    description: "Recomendamos opciones de inversión de bajo costo para maximizar tus rendimientos a lo largo del tiempo."
                   },
                   {
-                    title: "Evidence-Based Approach",
-                    description: "Our recommendations are based on academic research and financial best practices."
+                    title: "Enfoque Basado en Evidencia",
+                    description: "Nuestras recomendaciones se basan en investigación académica y mejores prácticas financieras."
                   }
                 ].map((item, index) => (
                   <div
@@ -170,15 +170,15 @@ const Index = () => {
                 )}
                 style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
               >
-                <h2 className="text-2xl font-semibold mb-4">Ready to Start Investing?</h2>
+                <h2 className="text-2xl font-semibold mb-4">¿Listo para Empezar a Invertir?</h2>
                 <p className="text-muted-foreground mb-6">
-                  Take the first step toward building your investment portfolio today.
+                  Dá el primer paso hacia la construcción de tu portafolio de inversión hoy.
                 </p>
                 <button
                   onClick={handleStartAssessment}
                   className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-sm"
                 >
-                  Start Risk Assessment
+                  Iniciar Evaluación de Riesgo
                 </button>
               </div>
             </section>
@@ -188,9 +188,9 @@ const Index = () => {
         {stage === "assessment" && (
           <div className="max-w-5xl mx-auto px-6 py-16">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-semibold mb-3">Risk Assessment</h2>
+              <h2 className="text-3xl font-semibold mb-3">Evaluación de Riesgo</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Answer the following questions to help us determine your investment risk tolerance.
+                Respondé las siguientes preguntas para ayudarnos a determinar tu tolerancia al riesgo de inversión.
               </p>
             </div>
             

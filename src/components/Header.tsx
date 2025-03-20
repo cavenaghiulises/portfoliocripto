@@ -35,28 +35,28 @@ const Header = () => {
             href="#about"
             className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
           >
-            About
+            Acerca de
           </a>
           <a
             href="#portfolio"
             className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
           >
-            Portfolio
+            Portafolio
           </a>
           <a
             href="#contact"
             className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
           >
-            Contact
+            Contacto
           </a>
         </nav>
         
         <div className="flex items-center space-x-4">
           <button className="hidden md:block px-4 py-2 text-sm font-medium text-primary border border-primary/20 rounded-full hover:bg-primary/5 transition-colors">
-            Sign In
+            Ingresar
           </button>
           <button className="px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-            Get Started
+            Comenzar
           </button>
         </div>
       </div>

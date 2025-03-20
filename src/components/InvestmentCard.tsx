@@ -38,6 +38,19 @@ const InvestmentCard = ({ investment, className, delay = 0 }: InvestmentCardProp
     }
   };
 
+  const getTypeName = (type: string) => {
+    switch (type) {
+      case "Stocks":
+        return "Acciones";
+      case "Bonds":
+        return "Bonos";
+      case "Cash":
+        return "Efectivo";
+      default:
+        return type;
+    }
+  };
+
   return (
     <div
       className={cn(
@@ -53,7 +66,7 @@ const InvestmentCard = ({ investment, className, delay = 0 }: InvestmentCardProp
     >
       <div className="mb-3">
         <span className={cn("text-xs font-medium px-2 py-1 rounded-full", getBgColor(investment.type), getTextColor(investment.type))}>
-          {investment.type}
+          {getTypeName(investment.type)}
         </span>
       </div>
       
