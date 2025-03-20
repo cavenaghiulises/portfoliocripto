@@ -63,197 +63,209 @@ export const calculateRiskLevel = (score: number): 'Low' | 'Moderate' | 'High' =
 export const portfolioAllocations: Record<string, PortfolioAllocation> = {
   Low: {
     riskLevel: 'Low',
-    stocks: 20,
-    bonds: 50,
-    cash: 20,
-    crypto: 10,
-    description: "Este portafolio conservador prioriza la preservación del capital y los ingresos sobre el crecimiento. Está diseñado para inversores con un horizonte temporal más corto o una menor tolerancia al riesgo.",
+    bitcoin: 30,
+    ethereum: 20,
+    altcoins: 10,
+    defi: 5,
+    stablecoins: 35,
+    description: "Este portafolio conservador prioriza la preservación del capital y un riesgo controlado. Se concentra principalmente en Bitcoin, Ethereum y stablecoins para mayor estabilidad.",
     diversificationTips: [
-      "Considerá acciones de alta calidad y que paguen dividendos para la porción de renta variable",
-      "Enfocate en bonos de alta calidad a corto y mediano plazo",
-      "Mantené reservas adecuadas de efectivo para emergencias y oportunidades",
-      "La diversificación geográfica puede ayudar a reducir riesgos específicos de cada país",
-      "Limitá la exposición a criptomonedas a las de mayor capitalización de mercado"
+      "Mantené un alto porcentaje en stablecoins para proteger tu capital",
+      "Concentrá tus inversiones en Bitcoin y Ethereum como base sólida",
+      "Limitá la exposición a altcoins y DeFi para reducir riesgos",
+      "Considerá el staking de stablecoins para generar rendimientos moderados",
+      "Mantené reservas adecuadas de efectivo fuera del mundo cripto para emergencias"
     ]
   },
   Moderate: {
     riskLevel: 'Moderate',
-    stocks: 50,
-    bonds: 25,
-    cash: 10,
-    crypto: 15,
-    description: "Este portafolio balanceado busca proporcionar crecimiento e ingresos con un riesgo moderado. Es adecuado para inversores con horizontes a mediano plazo que pueden tolerar algunas fluctuaciones del mercado.",
+    bitcoin: 25,
+    ethereum: 25,
+    altcoins: 20,
+    defi: 15,
+    stablecoins: 15,
+    description: "Este portafolio balanceado busca equilibrar crecimiento y seguridad. Distribuye el riesgo entre las principales criptomonedas y una exposición controlada a altcoins y DeFi.",
     diversificationTips: [
-      "Diversificá entre acciones de grande, mediana y pequeña capitalización",
-      "Considerá añadir exposición internacional a través de mercados desarrollados",
-      "Incluí bonos tanto gubernamentales como corporativos para diversificar la renta fija",
-      "Reequilibrá anualmente para mantener las asignaciones objetivo",
-      "Explorá diferentes sectores de criptomonedas como DeFi, NFTs y blockchains de capa 1"
+      "Balanceá tu exposición entre Bitcoin y Ethereum para diversificar tu base principal",
+      "Explorá altcoins establecidas con casos de uso comprobados",
+      "Investigá proyectos DeFi con auditorías de seguridad y buena reputación",
+      "Reequilibrá periódicamente tu portafolio para mantener las proporciones objetivo",
+      "Considerá estrategias de yield farming conservadoras con stablecoins"
     ]
   },
   High: {
     riskLevel: 'High',
-    stocks: 60,
-    bonds: 10,
-    cash: 5,
-    crypto: 25,
-    description: "Este portafolio orientado al crecimiento maximiza el potencial de apreciación a largo plazo. Es adecuado para inversores con horizontes temporales más largos que pueden soportar una volatilidad significativa del mercado.",
+    bitcoin: 20,
+    ethereum: 20,
+    altcoins: 30,
+    defi: 25,
+    stablecoins: 5,
+    description: "Este portafolio agresivo maximiza el potencial de crecimiento con mayor exposición a altcoins y DeFi. Es ideal para inversores con alto conocimiento del mercado y tolerancia al riesgo.",
     diversificationTips: [
-      "Incluí exposición a mercados emergentes para un mayor potencial de crecimiento",
-      "Considerá la diversificación por sectores entre tecnología, salud y otras áreas de crecimiento",
-      "Agregá pequeñas asignaciones a inversiones alternativas como REITs",
-      "Mantené una inversión disciplinada durante las caídas del mercado para beneficiarte de precios más bajos",
-      "Diversificá entre diferentes categorías de activos digitales, incluyendo tokens de utilidad y tokens de gobierno"
+      "Mantené Bitcoin y Ethereum como base de tu portafolio para cierta estabilidad",
+      "Diversificá entre múltiples altcoins de distintos sectores (Layer 1, Layer 2, Gaming, etc.)",
+      "Aprovechá las oportunidades en DeFi con estrategias de farming más agresivas",
+      "Investigá profundamente los proyectos antes de invertir, priorizando equipos sólidos",
+      "Considerá pequeñas asignaciones a proyectos emergentes con alto potencial"
     ]
   }
 };
 
 export const investmentOptions: InvestmentOption[] = [
-  // Stocks
+  // Bitcoin
   {
-    id: "stock-1",
-    name: "Vanguard Total Stock Market ETF",
-    ticker: "VTI",
-    type: "Stocks",
-    description: "Proporciona amplia exposición a todo el mercado de renta variable de EE.UU., incluyendo acciones de pequeña, mediana y gran capitalización, tanto de crecimiento como de valor."
-  },
-  {
-    id: "stock-2",
-    name: "iShares Core S&P 500 ETF",
-    ticker: "IVV",
-    type: "Stocks",
-    description: "Sigue el índice S&P 500, ofreciendo exposición a 500 grandes empresas estadounidenses que representan aproximadamente el 80% de la capitalización del mercado de EE.UU."
-  },
-  {
-    id: "stock-3",
-    name: "Vanguard FTSE Developed Markets ETF",
-    ticker: "VEA",
-    type: "Stocks",
-    description: "Proporciona exposición a mercados internacionales establecidos fuera de EE.UU., incluyendo mercados desarrollados en Europa, Australia, Asia y el Lejano Oriente."
-  },
-  {
-    id: "stock-4",
-    name: "Schwab U.S. Dividend Equity ETF",
-    ticker: "SCHD",
-    type: "Stocks",
-    description: "Se centra en acciones estadounidenses de alta calidad que pagan dividendos con un historial de aumento constante de sus dividendos."
-  },
-  {
-    id: "stock-5",
-    name: "Vanguard Growth ETF",
-    ticker: "VUG",
-    type: "Stocks",
-    description: "Invierte en grandes empresas estadounidenses que se espera que crezcan más rápido que el promedio del mercado."
-  },
-  
-  // Bonds
-  {
-    id: "bond-1",
-    name: "Vanguard Total Bond Market ETF",
-    ticker: "BND",
-    type: "Bonds",
-    description: "Proporciona amplia exposición a bonos de grado de inversión de EE.UU. con un enfoque en bonos del tesoro, bonos corporativos y valores respaldados por hipotecas."
-  },
-  {
-    id: "bond-2",
-    name: "iShares Core U.S. Aggregate Bond ETF",
-    ticker: "AGG",
-    type: "Bonds",
-    description: "Sigue el índice Bloomberg U.S. Aggregate Bond, representando el mercado de bonos de grado de inversión de EE.UU."
-  },
-  {
-    id: "bond-3",
-    name: "Vanguard Short-Term Bond ETF",
-    ticker: "BSV",
-    type: "Bonds",
-    description: "Invierte en bonos gubernamentales y corporativos de EE.UU. con vencimientos entre 1-5 años, ofreciendo menor riesgo de tasa de interés que los bonos a más largo plazo."
-  },
-  {
-    id: "bond-4",
-    name: "iShares TIPS Bond ETF",
-    ticker: "TIP",
-    type: "Bonds",
-    description: "Invierte en Valores del Tesoro Protegidos contra la Inflación (TIPS), que brindan protección contra la inflación."
-  },
-  {
-    id: "bond-5",
-    name: "Vanguard Intermediate-Term Corporate Bond ETF",
-    ticker: "VCIT",
-    type: "Bonds",
-    description: "Se centra en bonos corporativos de grado de inversión con vencimientos entre 5-10 años."
-  },
-  
-  // Cash/Money Market
-  {
-    id: "cash-1",
-    name: "Vanguard Federal Money Market Fund",
-    ticker: "VMFXX",
-    type: "Cash",
-    description: "Invierte en valores gubernamentales a corto plazo de EE.UU. y acuerdos de recompra, ofreciendo estabilidad y liquidez."
-  },
-  {
-    id: "cash-2",
-    name: "SPDR Bloomberg 1-3 Month T-Bill ETF",
-    ticker: "BIL",
-    type: "Cash",
-    description: "Invierte en Letras del Tesoro de EE.UU. con vencimientos entre 1-3 meses, ofreciendo un riesgo extremadamente bajo y alta liquidez."
-  },
-  {
-    id: "cash-3",
-    name: "JPMorgan Ultra-Short Income ETF",
-    ticker: "JPST",
-    type: "Cash",
-    description: "Invierte en una cartera diversificada de valores de renta fija a corto plazo de grado de inversión, con el objetivo de lograr un rendimiento mayor que los fondos del mercado monetario."
-  },
-  {
-    id: "cash-4",
-    name: "Vanguard Short-Term Treasury ETF",
-    ticker: "VGSH",
-    type: "Cash",
-    description: "Proporciona exposición a bonos del Tesoro de EE.UU. a corto plazo con vencimientos entre 1-3 años."
-  },
-  {
-    id: "cash-5",
-    name: "Fidelity® Government Money Market Fund",
-    ticker: "SPAXX",
-    type: "Cash",
-    description: "Invierte en efectivo, valores gubernamentales de EE.UU. y acuerdos de recompra que están totalmente garantizados por efectivo o valores gubernamentales."
-  },
-  
-  // Crypto
-  {
-    id: "crypto-1",
+    id: "bitcoin-1",
     name: "Bitcoin",
     ticker: "BTC",
-    type: "Crypto",
+    type: "Bitcoin",
     description: "La primera y más grande criptomoneda por capitalización de mercado. A menudo considerada como 'oro digital' y reserva de valor."
   },
   {
-    id: "crypto-2",
+    id: "bitcoin-2",
+    name: "Fondo Indexado de Bitcoin",
+    ticker: "BTCi",
+    type: "Bitcoin",
+    description: "Exposición diversificada a Bitcoin a través de diferentes mercados y servicios custodiales, minimizando riesgos de contraparte."
+  },
+  {
+    id: "bitcoin-3",
+    name: "Bitcoin ETF",
+    ticker: "BTCETF",
+    type: "Bitcoin",
+    description: "Fondo cotizado en bolsa que sigue el precio de Bitcoin, ofreciendo exposición regulada sin necesidad de custodiar activos directamente."
+  },
+  
+  // Ethereum
+  {
+    id: "ethereum-1",
     name: "Ethereum",
     ticker: "ETH",
-    type: "Crypto",
+    type: "Ethereum",
     description: "Una plataforma blockchain programable que permite aplicaciones descentralizadas, contratos inteligentes y finanzas descentralizadas (DeFi)."
   },
   {
-    id: "crypto-3",
+    id: "ethereum-2",
+    name: "Ethereum Staking",
+    ticker: "stETH",
+    type: "Ethereum",
+    description: "Depositar ETH para contribuir a la seguridad de la red y recibir recompensas de staking entre 3-5% anual."
+  },
+  {
+    id: "ethereum-3",
+    name: "Ethereum ETF",
+    ticker: "ETHF",
+    type: "Ethereum",
+    description: "Fondo cotizado en bolsa que sigue el precio de Ethereum, permitiendo exposición a través de cuentas de inversión tradicionales."
+  },
+  
+  // Altcoins
+  {
+    id: "altcoin-1",
     name: "Solana",
     ticker: "SOL",
-    type: "Crypto",
+    type: "Altcoin",
     description: "Blockchain de alta performance y baja latencia que facilita el desarrollo de aplicaciones descentralizadas y defi."
   },
   {
-    id: "crypto-4",
-    name: "Binance Coin",
-    ticker: "BNB",
-    type: "Crypto",
-    description: "El token nativo del ecosistema Binance, utilizado para pagar tarifas de transacción y participar en ofertas de tokens."
+    id: "altcoin-2",
+    name: "Cardano",
+    ticker: "ADA",
+    type: "Altcoin",
+    description: "Plataforma blockchain basada en prueba de participación desarrollada con rigor académico y enfoque en sostenibilidad y escalabilidad."
   },
   {
-    id: "crypto-5",
-    name: "Stablecoin Index (USDC, USDT, DAI)",
+    id: "altcoin-3",
+    name: "Polkadot",
+    ticker: "DOT",
+    type: "Altcoin",
+    description: "Protocolo que permite a blockchains especializadas transferir mensajes y valor entre sí, facilitando una web descentralizada."
+  },
+  {
+    id: "altcoin-4",
+    name: "Avalanche",
+    ticker: "AVAX",
+    type: "Altcoin",
+    description: "Plataforma de contratos inteligentes de alto rendimiento que busca ser una alternativa más escalable a Ethereum."
+  },
+  {
+    id: "altcoin-5",
+    name: "Cosmos",
+    ticker: "ATOM",
+    type: "Altcoin",
+    description: "Ecosistema de blockchains interoperables diseñadas para escalar y comunicarse entre sí, conocido como el 'Internet de las blockchains'."
+  },
+  
+  // DeFi
+  {
+    id: "defi-1",
+    name: "Uniswap",
+    ticker: "UNI",
+    type: "DeFi",
+    description: "Exchange descentralizado líder que utiliza un sistema automatizado de creación de mercado para facilitar el intercambio de tokens."
+  },
+  {
+    id: "defi-2",
+    name: "Aave",
+    ticker: "AAVE",
+    type: "DeFi",
+    description: "Protocolo de préstamos descentralizado que permite a los usuarios prestar y tomar prestados criptoactivos sin necesidad de intermediarios."
+  },
+  {
+    id: "defi-3",
+    name: "Curve Finance",
+    ticker: "CRV",
+    type: "DeFi",
+    description: "Exchange descentralizado optimizado para el intercambio eficiente de stablecoins y otros activos con comportamiento similar."
+  },
+  {
+    id: "defi-4",
+    name: "MakerDAO",
+    ticker: "MKR",
+    type: "DeFi",
+    description: "Protocolo que permite a los usuarios generar la stablecoin DAI utilizando criptoactivos como colateral."
+  },
+  {
+    id: "defi-5",
+    name: "Compound",
+    ticker: "COMP",
+    type: "DeFi",
+    description: "Protocolo de préstamos donde los usuarios pueden ganar intereses o pedir prestado activos contra colateral."
+  },
+  
+  // Stablecoins
+  {
+    id: "stablecoin-1",
+    name: "USD Coin",
+    ticker: "USDC",
+    type: "Stablecoin",
+    description: "Stablecoin respaldada 1:1 por dólares estadounidenses, ofreciendo estabilidad en un mercado volátil."
+  },
+  {
+    id: "stablecoin-2",
+    name: "Tether",
+    ticker: "USDT",
+    type: "Stablecoin",
+    description: "La stablecoin más utilizada y con mayor volumen de operaciones, diseñada para mantener paridad con el dólar estadounidense."
+  },
+  {
+    id: "stablecoin-3",
+    name: "Dai",
+    ticker: "DAI",
+    type: "Stablecoin",
+    description: "Stablecoin descentralizada cuyo valor está vinculado al dólar estadounidense y respaldada por criptoactivos como colateral."
+  },
+  {
+    id: "stablecoin-4",
+    name: "Binance USD",
+    ticker: "BUSD",
+    type: "Stablecoin",
+    description: "Stablecoin emitida por Binance y Paxos, respaldada 1:1 por dólares estadounidenses y conforme a regulaciones."
+  },
+  {
+    id: "stablecoin-5",
+    name: "Cesta de Stablecoins",
     ticker: "STABLES",
-    type: "Crypto",
-    description: "Canasta de stablecoins respaldadas por dólar que ofrecen estabilidad en un mercado volátil, útiles para preservar capital durante periodos de incertidumbre."
+    type: "Stablecoin",
+    description: "Exposición diversificada a múltiples stablecoins para minimizar el riesgo específico de cada protocolo."
   }
 ];

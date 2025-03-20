@@ -27,9 +27,11 @@ const PortfolioRecommendation = ({
   }, []);
 
   const chartData = [
-    { name: "Acciones", value: portfolio.stocks, color: "#34C759" },
-    { name: "Bonos", value: portfolio.bonds, color: "#5E5CE6" },
-    { name: "Efectivo", value: portfolio.cash, color: "#FF9500" },
+    { name: "Bitcoin", value: portfolio.bitcoin, color: "#4335A7" },
+    { name: "Ethereum", value: portfolio.ethereum, color: "#80C4E9" },
+    { name: "Altcoins", value: portfolio.altcoins, color: "#FFF6E9" },
+    { name: "DeFi", value: portfolio.defi, color: "#FF7F3E" },
+    { name: "Stablecoins", value: portfolio.stablecoins, color: "#9B8ADB" },
   ];
 
   const getInvestmentsByType = (type: InvestmentOption["type"]) => {
@@ -38,9 +40,11 @@ const PortfolioRecommendation = ({
       .slice(0, 3);
   };
 
-  const stockOptions = getInvestmentsByType("Stocks");
-  const bondOptions = getInvestmentsByType("Bonds");
-  const cashOptions = getInvestmentsByType("Cash");
+  const bitcoinOptions = getInvestmentsByType("Bitcoin");
+  const ethereumOptions = getInvestmentsByType("Ethereum");
+  const altcoinOptions = getInvestmentsByType("Altcoin");
+  const defiOptions = getInvestmentsByType("DeFi");
+  const stablecoinOptions = getInvestmentsByType("Stablecoin");
 
   return (
     <div
@@ -103,9 +107,9 @@ const PortfolioRecommendation = ({
         <h3 className="text-xl font-medium mb-6">Inversiones Recomendadas</h3>
 
         <div className="mb-8">
-          <h4 className="text-lg font-medium mb-4">Acciones ({portfolio.stocks}%)</h4>
+          <h4 className="text-lg font-medium mb-4">Bitcoin ({portfolio.bitcoin}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stockOptions.map((option, index) => (
+            {bitcoinOptions.map((option, index) => (
               <InvestmentCard
                 key={option.id}
                 investment={option}
@@ -116,9 +120,9 @@ const PortfolioRecommendation = ({
         </div>
 
         <div className="mb-8">
-          <h4 className="text-lg font-medium mb-4">Bonos ({portfolio.bonds}%)</h4>
+          <h4 className="text-lg font-medium mb-4">Ethereum ({portfolio.ethereum}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {bondOptions.map((option, index) => (
+            {ethereumOptions.map((option, index) => (
               <InvestmentCard
                 key={option.id}
                 investment={option}
@@ -128,14 +132,40 @@ const PortfolioRecommendation = ({
           </div>
         </div>
 
-        <div>
-          <h4 className="text-lg font-medium mb-4">Efectivo ({portfolio.cash}%)</h4>
+        <div className="mb-8">
+          <h4 className="text-lg font-medium mb-4">Altcoins ({portfolio.altcoins}%)</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cashOptions.map((option, index) => (
+            {altcoinOptions.map((option, index) => (
               <InvestmentCard
                 key={option.id}
                 investment={option}
                 delay={0.1 * (index + 6)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-8">
+          <h4 className="text-lg font-medium mb-4">DeFi ({portfolio.defi}%)</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {defiOptions.map((option, index) => (
+              <InvestmentCard
+                key={option.id}
+                investment={option}
+                delay={0.1 * (index + 9)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-lg font-medium mb-4">Stablecoins ({portfolio.stablecoins}%)</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {stablecoinOptions.map((option, index) => (
+              <InvestmentCard
+                key={option.id}
+                investment={option}
+                delay={0.1 * (index + 12)}
               />
             ))}
           </div>
