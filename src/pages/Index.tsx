@@ -150,7 +150,7 @@ const Index = () => {
                   <div
                     key={index}
                     className={cn(
-                      "p-5 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm",
+                      "p-5 border border-border/60 rounded-xl bg-white/50 backdrop-blur-sm",
                       "opacity-0 animate-slideUp"
                     )}
                     style={{ animationDelay: `${0.3 + index * 0.1}s`, animationFillMode: "forwards" }}
@@ -162,7 +162,7 @@ const Index = () => {
               </div>
             </section>
             
-            <section id="contact" className="max-w-2xl mx-auto text-center">
+            <section className="max-w-2xl mx-auto text-center">
               <div
                 className={cn(
                   "p-8 md:p-12 rounded-2xl bg-foreground/5 border border-border/30",

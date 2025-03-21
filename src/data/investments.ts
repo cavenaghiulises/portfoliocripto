@@ -1,4 +1,3 @@
-
 import { InvestmentOption, PortfolioAllocation, Question } from "@/types";
 
 export const riskAssessmentQuestions: Question[] = [
@@ -14,7 +13,7 @@ export const riskAssessmentQuestions: Question[] = [
   },
   {
     id: 2,
-    text: "Si tu inversión perdiera el 20% de su valor en un mes, ¿qué harías?",
+    text: "Si tu inversión perdiera el 50% de su valor en un mes, ¿qué harías?",
     options: [
       { text: "Vender todo para evitar más pérdidas", score: 1 },
       { text: "Vender algunas inversiones para reducir el riesgo", score: 2 },

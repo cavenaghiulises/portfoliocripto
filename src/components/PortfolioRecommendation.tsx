@@ -43,10 +43,7 @@ const PortfolioRecommendation = ({
 
   const bitcoinOptions = getInvestmentsByType("Bitcoin");
   const ethereumOptions = getInvestmentsByType("Ethereum");
-  const altcoinOptions = getInvestmentsByType("Altcoin");
-  const defiOptions = getInvestmentsByType("DeFi");
   const stablecoinOptions = getInvestmentsByType("Stablecoin");
-  const memecoinOptions = getInvestmentsByType("Memecoin");
 
   return (
     <div
@@ -110,80 +107,72 @@ const PortfolioRecommendation = ({
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Bitcoin ({portfolio.bitcoin}%)</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {bitcoinOptions.map((option, index) => (
-              <InvestmentCard
-                key={option.id}
-                investment={option}
-                delay={0.1 * index}
-              />
-            ))}
+          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <p className="text-foreground/80">
+              <strong>Ticker:</strong> BTC
+            </p>
+            <p className="text-foreground/80 mt-1">
+              <a href="https://www.coingecko.com/es/monedas/bitcoin" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="text-primary hover:underline">
+                Ver en CoinGecko
+              </a>
+            </p>
           </div>
         </div>
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Ethereum ({portfolio.ethereum}%)</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ethereumOptions.map((option, index) => (
-              <InvestmentCard
-                key={option.id}
-                investment={option}
-                delay={0.1 * (index + 3)}
-              />
-            ))}
+          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <p className="text-foreground/80">
+              <strong>Ticker:</strong> ETH
+            </p>
+            <p className="text-foreground/80 mt-1">
+              <a href="https://www.coingecko.com/es/monedas/ethereum" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="text-primary hover:underline">
+                Ver en CoinGecko
+              </a>
+            </p>
           </div>
         </div>
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Altcoins ({portfolio.altcoins}%)</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {altcoinOptions.map((option, index) => (
-              <InvestmentCard
-                key={option.id}
-                investment={option}
-                delay={0.1 * (index + 6)}
-              />
-            ))}
+          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <p className="text-foreground/80">
+              Categoría para criptomonedas alternativas de alto potencial
+            </p>
           </div>
         </div>
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">DeFi ({portfolio.defi}%)</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {defiOptions.map((option, index) => (
-              <InvestmentCard
-                key={option.id}
-                investment={option}
-                delay={0.1 * (index + 9)}
-              />
-            ))}
+          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <p className="text-foreground/80">
+              Categoría para protocolos de finanzas descentralizadas
+            </p>
           </div>
         </div>
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Stablecoins ({portfolio.stablecoins}%)</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stablecoinOptions.map((option, index) => (
-              <InvestmentCard
-                key={option.id}
-                investment={option}
-                delay={0.1 * (index + 12)}
-              />
-            ))}
+          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <p className="text-foreground/80">
+              <strong>Tickers principales:</strong> USDT, USDC, DAI, BUSD
+            </p>
           </div>
         </div>
 
         {portfolio.memecoins > 0 && (
           <div className="mb-8">
             <h4 className="text-lg font-medium mb-4">Memecoins ({portfolio.memecoins}%)</h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {memecoinOptions.map((option, index) => (
-                <InvestmentCard
-                  key={option.id}
-                  investment={option}
-                  delay={0.1 * (index + 15)}
-                />
-              ))}
+            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+              <p className="text-foreground/80">
+                Categoría para tokens con comunidades activas basados en memes
+              </p>
             </div>
           </div>
         )}
