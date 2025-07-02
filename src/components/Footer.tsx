@@ -26,9 +26,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/cavenaghiulises/" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors">
               LinkedIn
             </a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">
-              Instagram
-            </a>
+            
           </div>
         </div>
       </div>
