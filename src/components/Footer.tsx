@@ -17,7 +17,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Investopia. Todos los derechos reservados.
+            © 2025 PortafolioCripto. Creado por Ulises Cavenaghi. Todos los derechos reservados.
           </p>
           <div className="mt-4 md:mt-0 flex items-center space-x-4">
             <a href="https://x.com/cavenaghiulises" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary transition-colors">
