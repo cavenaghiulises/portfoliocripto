@@ -40,9 +40,8 @@ const Index = () => {
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight animate-fadeIn" style={{
             animationDelay: "0.1s"
-          }}>
-                Diseñá tu Portafolio de Inversión Perfecto
-              </h1>
+          }}>Diseñá tu
+Portafolio de Inversión Cripto</h1>
               <p className="text-xl text-muted-foreground mb-8 animate-fadeIn" style={{
             animationDelay: "0.2s"
           }}>
@@ -111,26 +110,7 @@ const Index = () => {
                 
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[{
-              title: "Recomendaciones Personalizadas",
-              description: "Obtené recomendaciones de portafolio adaptadas a tu situación financiera única y objetivos."
-            }, {
-              title: "Estrategia de Diversificación",
-              description: "Aprendé cómo diversificar adecuadamente tus inversiones para reducir el riesgo manteniendo el potencial de crecimiento."
-            }, {
-              title: "Opciones Eficientes en Costos",
-              description: "Recomendamos opciones de inversión de bajo costo para maximizar tus rendimientos a lo largo del tiempo."
-            }, {
-              title: "Enfoque Basado en Evidencia",
-              description: "Nuestras recomendaciones se basan en investigación académica y mejores prácticas financieras."
-            }].map((item, index) => (
-              <div key={index} className="p-6 rounded-lg bg-white/50 backdrop-blur-sm border border-border/20">
-                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-              </div>
+              
             </section>
             
             <section className="max-w-2xl mx-auto text-center">
