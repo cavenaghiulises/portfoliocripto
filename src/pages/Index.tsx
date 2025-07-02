@@ -57,7 +57,7 @@ const Index = () => {
             </section>
             
             <section className="mb-24">
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 py-0">
                 <h2 className="text-3xl font-semibold mb-4">Cómo Funciona</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   Nuestro asesor inteligente de portafolio crea recomendaciones personalizadas basadas en tu situación única.
@@ -124,12 +124,7 @@ const Index = () => {
             }, {
               title: "Enfoque Basado en Evidencia",
               description: "Nuestras recomendaciones se basan en investigación académica y mejores prácticas financieras."
-            }].map((item, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-border/30 shadow-sm">
-                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
+            }].map((item, index) => {})}
               </div>
             </section>
             
