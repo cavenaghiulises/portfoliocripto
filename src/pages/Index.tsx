@@ -124,7 +124,12 @@ const Index = () => {
             }, {
               title: "Enfoque Basado en Evidencia",
               description: "Nuestras recomendaciones se basan en investigación académica y mejores prácticas financieras."
-            }].map((item, index) => {})}
+            }].map((item, index) => (
+              <div key={index} className="p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-border/30 shadow-sm">
+                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </div>
+            ))}
               </div>
             </section>
             
