@@ -30,10 +30,9 @@ const PortfolioRecommendation = ({
     { name: "Bitcoin", value: portfolio.bitcoin, color: "#4335A7" },
     { name: "Ethereum", value: portfolio.ethereum, color: "#80C4E9" },
     { name: "Altcoins", value: portfolio.altcoins, color: "#FFF6E9" },
-    { name: "DeFi", value: portfolio.defi, color: "#FF7F3E" },
     { name: "Stablecoins", value: portfolio.stablecoins, color: "#9B8ADB" },
     { name: "Memecoins", value: portfolio.memecoins, color: "#FF9E9E" },
-  ];
+  ].filter(item => item.value > 0);
 
   const getInvestmentsByType = (type: InvestmentOption["type"]) => {
     return investmentOptions
@@ -139,30 +138,53 @@ const PortfolioRecommendation = ({
           </div>
         </div>
 
-        <div className="mb-8">
-          <h4 className="text-lg font-medium mb-4">Altcoins ({portfolio.altcoins}%)</h4>
-          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
-            <p className="text-foreground/80">
-              Categoría para criptomonedas alternativas de alto potencial
-            </p>
+        {portfolio.altcoins > 0 && (
+          <div className="mb-8">
+            <h4 className="text-lg font-medium mb-4">Altcoins ({portfolio.altcoins}%)</h4>
+            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+              <p className="text-foreground/80">
+                Categoría para criptomonedas alternativas de alto potencial, incluyendo proyectos DeFi
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div className="mb-8">
-          <h4 className="text-lg font-medium mb-4">DeFi ({portfolio.defi}%)</h4>
-          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
-            <p className="text-foreground/80">
-              Categoría para protocolos de finanzas descentralizadas
-            </p>
-          </div>
-        </div>
+        )}
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Stablecoins ({portfolio.stablecoins}%)</h4>
-          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
-            <p className="text-foreground/80">
-              <strong>Tickers principales:</strong> USDT, USDC, DAI, BUSD
-            </p>
+          <div className="space-y-3">
+            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm">
+              <p className="text-foreground/80">
+                <strong>USDT (Tether):</strong>{" "}
+                <a href="https://www.coingecko.com/es/monedas/tether" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-primary hover:underline">
+                  Ver en CoinGecko
+                </a>
+              </p>
+            </div>
+            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm">
+              <p className="text-foreground/80">
+                <strong>USDC (USD Coin):</strong>{" "}
+                <a href="https://www.coingecko.com/es/monedas/usdc" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-primary hover:underline">
+                  Ver en CoinGecko
+                </a>
+              </p>
+            </div>
+            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm">
+              <p className="text-foreground/80">
+                <strong>USDS (Sky Dollar):</strong>{" "}
+                <a href="https://www.coingecko.com/es/monedas/usds" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-primary hover:underline">
+                  Ver en CoinGecko
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 

@@ -23,7 +23,6 @@ export interface PortfolioAllocation {
   bitcoin: number;
   ethereum: number;
   altcoins: number;
-  defi: number;
   stablecoins: number;
   memecoins: number;
   description: string;

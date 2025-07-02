@@ -62,17 +62,16 @@ export const calculateRiskLevel = (score: number): 'Low' | 'Moderate' | 'High' =
 export const portfolioAllocations: Record<string, PortfolioAllocation> = {
   Low: {
     riskLevel: 'Low',
-    bitcoin: 30,
-    ethereum: 20,
-    altcoins: 10,
-    defi: 5,
-    stablecoins: 35,
+    bitcoin: 35,
+    ethereum: 25,
+    altcoins: 0,
+    stablecoins: 40,
     memecoins: 0,
-    description: "Este portafolio conservador prioriza la preservación del capital y un riesgo controlado. Se concentra principalmente en Bitcoin, Ethereum y stablecoins para mayor estabilidad.",
+    description: "Este portafolio conservador prioriza la preservación del capital y un riesgo controlado. Se concentra únicamente en Bitcoin, Ethereum y stablecoins para máxima estabilidad.",
     diversificationTips: [
       "Mantené un alto porcentaje en stablecoins para proteger tu capital",
       "Concentrá tus inversiones en Bitcoin y Ethereum como base sólida",
-      "Limitá la exposición a altcoins y DeFi para reducir riesgos",
+      "Evitá altcoins y tokens especulativos para minimizar riesgos",
       "Considerá el staking de stablecoins para generar rendimientos moderados",
       "Mantené reservas adecuadas de efectivo fuera del mundo cripto para emergencias"
     ]
@@ -81,15 +80,14 @@ export const portfolioAllocations: Record<string, PortfolioAllocation> = {
     riskLevel: 'Moderate',
     bitcoin: 25,
     ethereum: 25,
-    altcoins: 20,
-    defi: 15,
+    altcoins: 35,
     stablecoins: 10,
     memecoins: 5,
-    description: "Este portafolio balanceado busca equilibrar crecimiento y seguridad. Distribuye el riesgo entre las principales criptomonedas y una exposición controlada a altcoins, DeFi y una pequeña porción en memecoins para potencial crecimiento.",
+    description: "Este portafolio balanceado busca equilibrar crecimiento y seguridad. Distribuye el riesgo entre las principales criptomonedas y una exposición controlada a altcoins (incluyendo DeFi) y una pequeña porción en memecoins.",
     diversificationTips: [
       "Balanceá tu exposición entre Bitcoin y Ethereum para diversificar tu base principal",
-      "Explorá altcoins establecidas con casos de uso comprobados",
-      "Investigá proyectos DeFi con auditorías de seguridad y buena reputación",
+      "Explorá altcoins establecidas con casos de uso comprobados, incluyendo proyectos DeFi",
+      "Investigá proyectos con auditorías de seguridad y buena reputación",
       "Destiná un pequeño porcentaje a memecoins con comunidades activas",
       "Reequilibrá periódicamente tu portafolio para mantener las proporciones objetivo"
     ]
@@ -98,15 +96,14 @@ export const portfolioAllocations: Record<string, PortfolioAllocation> = {
     riskLevel: 'High',
     bitcoin: 15,
     ethereum: 15,
-    altcoins: 25,
-    defi: 25,
+    altcoins: 50,
     stablecoins: 5,
     memecoins: 15,
-    description: "Este portafolio agresivo maximiza el potencial de crecimiento con mayor exposición a altcoins, DeFi y memecoins. Es ideal para inversores con alto conocimiento del mercado y tolerancia al riesgo.",
+    description: "Este portafolio agresivo maximiza el potencial de crecimiento con mayor exposición a altcoins (incluyendo DeFi) y memecoins. Es ideal para inversores con alto conocimiento del mercado y tolerancia al riesgo.",
     diversificationTips: [
       "Mantené Bitcoin y Ethereum como base de tu portafolio para cierta estabilidad",
-      "Diversificá entre múltiples altcoins de distintos sectores",
-      "Aprovechá las oportunidades en DeFi con estrategias de farming más agresivas",
+      "Diversificá entre múltiples altcoins de distintos sectores, incluyendo DeFi",
+      "Aprovechá las oportunidades en protocolos DeFi con estrategias más agresivas",
       "Invertí en memecoins con comunidades activas y potencial de crecimiento viral",
       "Considerá realizar toma de ganancias periódicamente en tus posiciones más volátiles"
     ]
