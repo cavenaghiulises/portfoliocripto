@@ -89,7 +89,7 @@ const Index = () => {
                   },
                   {
                     title: "Acción!",
-                    description: "Implementá tu estrategia de portafolio personalizada con confianza, sabiendo que está alineada con tus objetivos financieros.",
+                    description: "Implementá tu estrategia de portafolio personalizada si te parece adecuada, sabiendo que está alineada con tus objetivos financieros.",
                     icon: (
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                         <path d="M12 2v20" />
