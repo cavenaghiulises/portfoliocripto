@@ -1,5 +1,15 @@
 
-export type RiskLevel = 'Low' | 'Moderate' | 'High';
+export type RiskLevel = 
+  | 'UltraConservative' 
+  | 'VeryConservative' 
+  | 'Conservative' 
+  | 'ConservativeModerate' 
+  | 'BalancedModerate' 
+  | 'GrowthModerate' 
+  | 'AggressiveModerate' 
+  | 'Aggressive' 
+  | 'VeryAggressive' 
+  | 'UltraAggressive';
 
 export interface Question {
   id: number;

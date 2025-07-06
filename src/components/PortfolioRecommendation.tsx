@@ -6,6 +6,22 @@ import AllocationChart from "./AllocationChart";
 import InvestmentCard from "./InvestmentCard";
 import { cn } from "@/lib/utils";
 
+const getRiskLevelDisplayName = (riskLevel: RiskLevel): string => {
+  const displayNames: Record<RiskLevel, string> = {
+    UltraConservative: 'Ultra Conservador',
+    VeryConservative: 'Muy Conservador', 
+    Conservative: 'Conservador',
+    ConservativeModerate: 'Conservador Moderado',
+    BalancedModerate: 'Moderado Balanceado',
+    GrowthModerate: 'Moderado de Crecimiento',
+    AggressiveModerate: 'Moderado Agresivo',
+    Aggressive: 'Agresivo',
+    VeryAggressive: 'Muy Agresivo',
+    UltraAggressive: 'Ultra Agresivo'
+  };
+  return displayNames[riskLevel];
+};
+
 interface PortfolioRecommendationProps {
   riskLevel: RiskLevel;
   onStartOver: () => void;
@@ -56,7 +72,7 @@ const PortfolioRecommendation = ({
           Tu Portafolio Personalizado
         </div>
         <h2 className="text-3xl font-semibold mb-3">
-          Portafolio de Riesgo {riskLevel === 'Low' ? 'Bajo' : riskLevel === 'Moderate' ? 'Moderado' : 'Alto'}
+          Portafolio {getRiskLevelDisplayName(riskLevel)}
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
           {portfolio.description}

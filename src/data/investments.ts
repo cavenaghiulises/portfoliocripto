@@ -1,4 +1,4 @@
-import { InvestmentOption, PortfolioAllocation, Question } from "@/types";
+import { InvestmentOption, PortfolioAllocation, Question, RiskLevel } from "@/types";
 
 export const riskAssessmentQuestions: Question[] = [
   {
@@ -53,59 +53,178 @@ export const riskAssessmentQuestions: Question[] = [
   },
 ];
 
-export const calculateRiskLevel = (score: number): 'Low' | 'Moderate' | 'High' => {
-  if (score <= 10) return 'Low';
-  if (score <= 15) return 'Moderate';
-  return 'High';
+export const calculateRiskLevel = (score: number): RiskLevel => {
+  if (score <= 6) return 'UltraConservative';
+  if (score <= 8) return 'VeryConservative';
+  if (score <= 10) return 'Conservative';
+  if (score <= 12) return 'ConservativeModerate';
+  if (score <= 14) return 'BalancedModerate';
+  if (score <= 16) return 'GrowthModerate';
+  if (score <= 17) return 'AggressiveModerate';
+  if (score <= 18) return 'Aggressive';
+  if (score <= 19) return 'VeryAggressive';
+  return 'UltraAggressive';
 };
 
-export const portfolioAllocations: Record<string, PortfolioAllocation> = {
-  Low: {
-    riskLevel: 'Low',
+export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
+  UltraConservative: {
+    riskLevel: 'UltraConservative',
+    bitcoin: 20,
+    ethereum: 15,
+    altcoins: 0,
+    stablecoins: 65,
+    memecoins: 0,
+    description: "Portafolio ultra conservador que prioriza máxima preservación del capital con mínima volatilidad. Ideal para principiantes o inversores muy cautelosos.",
+    diversificationTips: [
+      "Mantené la mayoría de tu inversión en stablecoins para protección completa",
+      "Usá Bitcoin y Ethereum solo como pequeña exposición al crecimiento cripto",
+      "Considerá staking de stablecoins para rendimientos seguros del 3-5%",
+      "Evitá completamente altcoins y tokens especulativos",
+      "Mantené siempre reservas de emergencia fuera del ecosistema cripto"
+    ]
+  },
+  VeryConservative: {
+    riskLevel: 'VeryConservative',
+    bitcoin: 25,
+    ethereum: 20,
+    altcoins: 0,
+    stablecoins: 55,
+    memecoins: 0,
+    description: "Portafolio muy conservador con exposición limitada a Bitcoin y Ethereum, manteniendo la mayoría en stablecoins para estabilidad.",
+    diversificationTips: [
+      "Mantené más del 50% en stablecoins para estabilidad",
+      "Limitá la exposición a Bitcoin y Ethereum únicamente",
+      "Considerá DCA (Dollar Cost Averaging) para reducir volatilidad de entrada",
+      "Evitá tokens de alto riesgo y proyectos experimentales",
+      "Revisá tu portafolio mensualmente pero evitá cambios frecuentes"
+    ]
+  },
+  Conservative: {
+    riskLevel: 'Conservative',
     bitcoin: 35,
     ethereum: 25,
     altcoins: 0,
     stablecoins: 40,
     memecoins: 0,
-    description: "Este portafolio conservador prioriza la preservación del capital y un riesgo controlado. Se concentra únicamente en Bitcoin, Ethereum y stablecoins para máxima estabilidad.",
+    description: "Portafolio conservador equilibrado entre las principales criptomonedas y stablecoins, evitando activos especulativos.",
     diversificationTips: [
-      "Mantené un alto porcentaje en stablecoins para proteger tu capital",
-      "Concentrá tus inversiones en Bitcoin y Ethereum como base sólida",
-      "Evitá altcoins y tokens especulativos para minimizar riesgos",
-      "Considerá el staking de stablecoins para generar rendimientos moderados",
-      "Mantené reservas adecuadas de efectivo fuera del mundo cripto para emergencias"
+      "Mantené un balance sólido entre Bitcoin, Ethereum y stablecoins",
+      "Considerá el staking de ETH para generar rendimientos adicionales",
+      "Evitá altcoins hasta ganar más experiencia en el mercado",
+      "Implementá estrategias de rebalanceo trimestral",
+      "Mantené disciplina durante las correcciones del mercado"
     ]
   },
-  Moderate: {
-    riskLevel: 'Moderate',
+  ConservativeModerate: {
+    riskLevel: 'ConservativeModerate',
+    bitcoin: 30,
+    ethereum: 30,
+    altcoins: 15,
+    stablecoins: 25,
+    memecoins: 0,
+    description: "Portafolio conservador con ligera exposición a altcoins establecidas, manteniendo una base sólida en Bitcoin y Ethereum.",
+    diversificationTips: [
+      "Introducí altcoins establecidas como Solana, Cardano o Avalanche",
+      "Mantené Bitcoin y Ethereum como tu base principal",
+      "Investigá thoroughly antes de agregar nuevos altcoins",
+      "Considerá proyectos con casos de uso claros y adopción real",
+      "Mantené stablecoins como colchón de seguridad"
+    ]
+  },
+  BalancedModerate: {
+    riskLevel: 'BalancedModerate',
     bitcoin: 25,
     ethereum: 25,
     altcoins: 35,
     stablecoins: 10,
     memecoins: 5,
-    description: "Este portafolio balanceado busca equilibrar crecimiento y seguridad. Distribuye el riesgo entre las principales criptomonedas y una exposición controlada a altcoins (incluyendo DeFi) y una pequeña porción en memecoins.",
+    description: "Portafolio balanceado que combina estabilidad y crecimiento, con exposición moderada a altcoins y mínima a memecoins.",
     diversificationTips: [
-      "Balanceá tu exposición entre Bitcoin y Ethereum para diversificar tu base principal",
-      "Explorá altcoins establecidas con casos de uso comprobados, incluyendo proyectos DeFi",
-      "Investigá proyectos con auditorías de seguridad y buena reputación",
-      "Destiná un pequeño porcentaje a memecoins con comunidades activas",
-      "Reequilibrá periódicamente tu portafolio para mantener las proporciones objetivo"
+      "Balanceá entre seguridad (BTC/ETH) y oportunidades de crecimiento",
+      "Diversificá altcoins entre diferentes sectores (DeFi, Layer 1, etc.)",
+      "Destiná solo un pequeño porcentaje a memecoins establecidas",
+      "Rebalanceá trimestralmente para mantener proporciones objetivo",
+      "Considerá toma de ganancias parcial en altcoins exitosas"
     ]
   },
-  High: {
-    riskLevel: 'High',
+  GrowthModerate: {
+    riskLevel: 'GrowthModerate',
+    bitcoin: 20,
+    ethereum: 25,
+    altcoins: 45,
+    stablecoins: 5,
+    memecoins: 5,
+    description: "Portafolio enfocado en crecimiento con mayor exposición a altcoins prometedoras, manteniendo una base en las principales criptomonedas.",
+    diversificationTips: [
+      "Explorá altcoins de diferentes categorías: DeFi, Gaming, AI, Layer 2",
+      "Mantené Bitcoin y Ethereum como ancla de estabilidad",
+      "Investigá proyectos con roadmaps claros y equipos sólidos",
+      "Considerá participar en stakings y farming de DeFi",
+      "Establecé targets de toma de ganancias para altcoins exitosas"
+    ]
+  },
+  AggressiveModerate: {
+    riskLevel: 'AggressiveModerate',
+    bitcoin: 15,
+    ethereum: 20,
+    altcoins: 50,
+    stablecoins: 5,
+    memecoins: 10,
+    description: "Portafolio agresivo con fuerte exposición a altcoins y mayor tolerancia a memecoins, buscando maximizar oportunidades de crecimiento.",
+    diversificationTips: [
+      "Diversificá ampliamente entre altcoins de alto potencial",
+      "Considerá inversiones en proyectos early-stage con due diligence",
+      "Balanceá entre tokens establecidos y oportunidades emergentes",
+      "Mantené seguimiento activo de developments en tus inversiones",
+      "Implementá estrategias de trailing stops para proteger ganancias"
+    ]
+  },
+  Aggressive: {
+    riskLevel: 'Aggressive',
     bitcoin: 15,
     ethereum: 15,
     altcoins: 50,
     stablecoins: 5,
     memecoins: 15,
-    description: "Este portafolio agresivo maximiza el potencial de crecimiento con mayor exposición a altcoins (incluyendo DeFi) y memecoins. Es ideal para inversores con alto conocimiento del mercado y tolerancia al riesgo.",
+    description: "Portafolio agresivo que maximiza exposición a altcoins y memecoins, ideal para inversores experimentados con alta tolerancia al riesgo.",
     diversificationTips: [
-      "Mantené Bitcoin y Ethereum como base de tu portafolio para cierta estabilidad",
-      "Diversificá entre múltiples altcoins de distintos sectores, incluyendo DeFi",
-      "Aprovechá las oportunidades en protocolos DeFi con estrategias más agresivas",
-      "Invertí en memecoins con comunidades activas y potencial de crecimiento viral",
-      "Considerá realizar toma de ganancias periódicamente en tus posiciones más volátiles"
+      "Mantené Bitcoin y Ethereum como mínima estabilidad",
+      "Explorá activamente nuevos proyectos y narrativas del mercado",
+      "Participá en airdrops y programas de incentivos de protocolos",
+      "Considerá yield farming y estrategias DeFi más complejas", 
+      "Establecé límites de pérdida para gestionar riesgo de drawdown"
+    ]
+  },
+  VeryAggressive: {
+    riskLevel: 'VeryAggressive',
+    bitcoin: 10,
+    ethereum: 15,
+    altcoins: 55,
+    stablecoins: 0,
+    memecoins: 20,
+    description: "Portafolio muy agresivo con máxima exposición a altcoins y memecoins, eliminando stablecoins para maximizar potencial de crecimiento.",
+    diversificationTips: [
+      "Enfocate en altcoins de menor capitalización con alto potencial",
+      "Participá activamente en comunidades y ecosistemas de tus inversiones",
+      "Considerá inversiones en Pre-sales y IDOs con research profundo",
+      "Aprovechá momentos de alta volatilidad para rebalancear",
+      "Mantené disciplina en la toma de ganancias durante bull markets"
+    ]
+  },
+  UltraAggressive: {
+    riskLevel: 'UltraAggressive',
+    bitcoin: 5,
+    ethereum: 10,
+    altcoins: 60,
+    stablecoins: 0,
+    memecoins: 25,
+    description: "Portafolio ultra agresivo para traders experimentados, con mínima exposición a Bitcoin/Ethereum y máxima a oportunidades especulativas.",
+    diversificationTips: [
+      "Explorá oportunidades en micro-caps y proyectos pre-launch",
+      "Mantené solo exposición mínima a Bitcoin y Ethereum",
+      "Participá activamente en trends y narrativas del momento",
+      "Considerá leverage y derivados cripto con extrema precaución",
+      "Implementá sistemas rigurosos de risk management y stop losses"
     ]
   }
 };
