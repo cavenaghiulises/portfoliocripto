@@ -122,7 +122,7 @@ basadas en tu situación única.</p>
           }}>
                 <h2 className="text-2xl font-semibold mb-4">¿Listo para diseñar tu portfolio de inversión cripto?</h2>
                 <p className="text-muted-foreground mb-6">Empezá a construir tu portafolio de inversión hoy!</p>
-                <button onClick={handleStartAssessment} className="px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors shadow-sm">
+                <button onClick={handleStartAssessment} className="px-6 py-3 rounded-full transition-colors shadow-sm text-lg text-slate-50 bg-blue-600 hover:bg-blue-500">
                   Iniciar Evaluación de Riesgo
                 </button>
               </div>
