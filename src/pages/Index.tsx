@@ -37,9 +37,7 @@ const Index = () => {
       
       <main className="pt-20">
         {stage === "intro" && <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-            <div className="max-w-4xl mx-auto mb-8">
-              <Disclaimer />
-            </div>
+            
             
             <section className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
               
