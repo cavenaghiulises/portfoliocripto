@@ -51,9 +51,9 @@ Portafolio de Inversión Cripto</h1>
                 Respondé algunas preguntas sobre tus objetivos de inversión y tolerancia al riesgo,
                 y crearemos una recomendación de portafolio personalizada.
               </p>
-              <button onClick={handleStartAssessment} className="px-8 py-4 bg-primary text-primary-foreground rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fadeIn" style={{
+              <button onClick={handleStartAssessment} style={{
             animationDelay: "0.3s"
-          }}>
+          }} className="px-8 py-4 rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fadeIn bg-blue-600 hover:bg-blue-500 text-slate-50 text-lg">
                 Comenzar
               </button>
             </section>
