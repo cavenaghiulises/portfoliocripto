@@ -4,6 +4,8 @@ import { PortfolioAllocation, RiskLevel, InvestmentOption } from "@/types";
 import { portfolioAllocations, investmentOptions } from "@/data/investments";
 import AllocationChart from "./AllocationChart";
 import InvestmentCard from "./InvestmentCard";
+import Disclaimer from "./Disclaimer";
+import SocialShare from "./SocialShare";
 import { cn } from "@/lib/utils";
 
 const getRiskLevelDisplayName = (riskLevel: RiskLevel): string => {
@@ -67,6 +69,8 @@ const PortfolioRecommendation = ({
         isVisible ? "opacity-100" : "opacity-0"
       )}
     >
+      <Disclaimer />
+      
       <div className="text-center mb-12">
         <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
           Tu Portafolio Personalizado
@@ -79,11 +83,12 @@ const PortfolioRecommendation = ({
         </p>
       </div>
 
-      <div className="bg-white/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-sm mb-12">
+      <div className="bg-card border border-border rounded-2xl p-8 shadow-sm mb-12">
         <h3 className="text-xl font-medium mb-6 text-center">
           Asignación de Activos Recomendada
         </h3>
         <AllocationChart data={chartData} />
+        <SocialShare portfolioType={getRiskLevelDisplayName(riskLevel)} />
       </div>
 
       <div className="mb-12">
@@ -92,7 +97,7 @@ const PortfolioRecommendation = ({
           {portfolio.diversificationTips.map((tip, index) => (
             <div
               key={index}
-              className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm"
+              className="p-4 border border-border rounded-xl bg-card"
             >
               <div className="flex items-start gap-3">
                 <div className="rounded-full bg-primary/10 text-primary p-1 mt-0.5">
@@ -122,7 +127,7 @@ const PortfolioRecommendation = ({
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Bitcoin ({portfolio.bitcoin}%)</h4>
-          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+          <div className="p-4 border border-border rounded-xl bg-card mb-4">
             <p className="text-foreground/80">
               <strong>Ticker:</strong> BTC
             </p>
@@ -139,7 +144,7 @@ const PortfolioRecommendation = ({
 
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Ethereum ({portfolio.ethereum}%)</h4>
-          <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+          <div className="p-4 border border-border rounded-xl bg-card mb-4">
             <p className="text-foreground/80">
               <strong>Ticker:</strong> ETH
             </p>
@@ -157,7 +162,7 @@ const PortfolioRecommendation = ({
         {portfolio.altcoins > 0 && (
           <div className="mb-8">
             <h4 className="text-lg font-medium mb-4">Altcoins ({portfolio.altcoins}%)</h4>
-            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <div className="p-4 border border-border rounded-xl bg-card mb-4">
               <p className="text-foreground/80">
                 Categoría para criptomonedas alternativas de alto potencial, incluyendo proyectos DeFi
               </p>
@@ -168,7 +173,7 @@ const PortfolioRecommendation = ({
         <div className="mb-8">
           <h4 className="text-lg font-medium mb-4">Stablecoins ({portfolio.stablecoins}%)</h4>
           <div className="space-y-3">
-            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm">
+            <div className="p-4 border border-border rounded-xl bg-card">
               <p className="text-foreground/80">
                 <strong>USDT (Tether):</strong>{" "}
                 <a href="https://www.coingecko.com/es/monedas/tether" 
@@ -179,7 +184,7 @@ const PortfolioRecommendation = ({
                 </a>
               </p>
             </div>
-            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm">
+            <div className="p-4 border border-border rounded-xl bg-card">
               <p className="text-foreground/80">
                 <strong>USDC (USD Coin):</strong>{" "}
                 <a href="https://www.coingecko.com/es/monedas/usdc" 
@@ -190,7 +195,7 @@ const PortfolioRecommendation = ({
                 </a>
               </p>
             </div>
-            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm">
+            <div className="p-4 border border-border rounded-xl bg-card">
               <p className="text-foreground/80">
                 <strong>USDS (Sky Dollar):</strong>{" "}
                 <a href="https://www.coingecko.com/es/monedas/usds" 
@@ -207,7 +212,7 @@ const PortfolioRecommendation = ({
         {portfolio.memecoins > 0 && (
           <div className="mb-8">
             <h4 className="text-lg font-medium mb-4">Memecoins ({portfolio.memecoins}%)</h4>
-            <div className="p-4 border border-border/50 rounded-xl bg-white/50 backdrop-blur-sm mb-4">
+            <div className="p-4 border border-border rounded-xl bg-card mb-4">
               <p className="text-foreground/80">
                 Categoría para tokens con comunidades activas basados en memes
               </p>
@@ -219,7 +224,7 @@ const PortfolioRecommendation = ({
       <div className="text-center mb-8">
         <button
           onClick={onStartOver}
-          className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-sm"
+          className="px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors shadow-sm"
         >
           Comenzar de Nuevo
         </button>

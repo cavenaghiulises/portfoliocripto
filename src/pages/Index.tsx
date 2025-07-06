@@ -4,6 +4,7 @@ import RiskAssessment from "@/components/RiskAssessment";
 import PortfolioRecommendation from "@/components/PortfolioRecommendation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Disclaimer from "@/components/Disclaimer";
 import { cn } from "@/lib/utils";
 const Index = () => {
   const [stage, setStage] = useState<"intro" | "assessment" | "result">("intro");
@@ -31,11 +32,15 @@ const Index = () => {
       behavior: "smooth"
     });
   };
-  return <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="pt-20">
         {stage === "intro" && <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+            <div className="max-w-4xl mx-auto mb-8">
+              <Disclaimer />
+            </div>
+            
             <section className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight animate-fadeIn" style={{
@@ -48,7 +53,7 @@ Portafolio de Inversión Cripto</h1>
                 Respondé algunas preguntas sobre tus objetivos de inversión y tolerancia al riesgo,
                 y crearemos una recomendación de portafolio personalizada.
               </p>
-              <button onClick={handleStartAssessment} className="px-8 py-4 bg-primary text-white rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fadeIn" style={{
+              <button onClick={handleStartAssessment} className="px-8 py-4 bg-primary text-primary-foreground rounded-full shadow-sm hover:shadow-md transition-all duration-300 animate-fadeIn" style={{
             animationDelay: "0.3s"
           }}>
                 Comenzar
@@ -91,7 +96,7 @@ Portafolio de Inversión Cripto</h1>
                         <path d="M7 8v3" />
                         <path d="M17 8v3" />
                       </svg>
-            }].map((item, index) => <div key={index} className={cn("flex flex-col items-center text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-border/30 shadow-sm", "opacity-0 animate-slideUp")} style={{
+            }].map((item, index) => <div key={index} className={cn("flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-border shadow-sm", "opacity-0 animate-slideUp")} style={{
               animationDelay: `${0.2 + index * 0.1}s`,
               animationFillMode: "forwards"
             }}>
@@ -120,11 +125,15 @@ Portafolio de Inversión Cripto</h1>
           }}>
                 <h2 className="text-2xl font-semibold mb-4">¿Listo para diseñar tu portfolio de inversión cripto?</h2>
                 <p className="text-muted-foreground mb-6">Empezá a construir tu portafolio de inversión hoy!</p>
-                <button onClick={handleStartAssessment} className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors shadow-sm">
+                <button onClick={handleStartAssessment} className="px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors shadow-sm">
                   Iniciar Evaluación de Riesgo
                 </button>
               </div>
             </section>
+            
+            <div className="max-w-4xl mx-auto mt-16">
+              <Disclaimer />
+            </div>
           </div>}
         
         {stage === "assessment" && <div className="max-w-5xl mx-auto px-6 py-16">
@@ -135,7 +144,7 @@ Portafolio de Inversión Cripto</h1>
               </p>
             </div>
             
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-border/30 shadow-sm">
+            <div className="bg-card rounded-2xl p-6 md:p-10 border border-border shadow-sm">
               <RiskAssessment onComplete={handleAssessmentComplete} />
             </div>
           </div>}
