@@ -61,9 +61,8 @@ Portafolio de Inversión Cripto</h1>
             <section className="mb-24">
               <div className="text-center mb-16 py-0">
                 <h2 className="text-3xl font-semibold mb-4">Cómo Funciona</h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Nuestro asesor inteligente de portafolio crea recomendaciones personalizadas basadas en tu situación única.
-                </p>
+                <p className="text-muted-foreground max-w-2xl mx-auto">Mediante asistencia por IA, la app crea recomendaciones personalizadas
+basadas en tu situación única.</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
