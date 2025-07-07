@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Share2, Twitter, Instagram, Facebook, Copy, Check } from "lucide-react";
+import { Share2, Twitter, Instagram, Facebook, Copy, Check, Download } from "lucide-react";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -10,10 +10,12 @@ interface SocialShareProps {
     value: number;
     color: string;
   }[];
+  onCaptureChart?: () => Promise<string>;
 }
 
-const SocialShare = ({ portfolioType, chartData }: SocialShareProps) => {
+const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialShareProps) => {
   const [copied, setCopied] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
   const { toast } = useToast();
 
   const shareText = `Acabo de crear mi portafolio de inversión cripto personalizado con "PortafolioCripto" de @cavenaghiulises.\n\nResultado: ${portfolioType}.\n\n¡Descubre el tuyo!`;
@@ -37,23 +39,90 @@ const SocialShare = ({ portfolioType, chartData }: SocialShareProps) => {
     }
   };
 
-  const handleShare = (platform: string) => {
+  const handleDownloadImage = async () => {
+    if (!onCaptureChart) return;
+    
+    try {
+      setIsGenerating(true);
+      const imageDataUrl = await onCaptureChart();
+      
+      // Create download link
+      const link = document.createElement("a");
+      link.download = `portafolio-cripto-${portfolioType.toLowerCase().replace(/\s+/g, "-")}.png`;
+      link.href = imageDataUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      toast({
+        title: "Imagen descargada",
+        description: "La imagen de tu portafolio ha sido descargada",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "No se pudo generar la imagen",
+        variant: "destructive",
+      });
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  const handleShare = async (platform: string) => {
     let url = "";
     
     switch (platform) {
       case "twitter":
+        if (onCaptureChart) {
+          try {
+            setIsGenerating(true);
+            await onCaptureChart(); // Generate image for user to download/use
+            toast({
+              title: "Imagen generada",
+              description: "Descarga la imagen y adjúntala al tweet manualmente",
+            });
+          } catch (error) {
+            toast({
+              title: "Error",
+              description: "No se pudo generar la imagen",
+              variant: "destructive",
+            });
+          } finally {
+            setIsGenerating(false);
+          }
+        }
         url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
         break;
       case "facebook":
         url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
         break;
       case "instagram":
-        // Instagram doesn't support direct URL sharing, so we copy the text
-        navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
-        toast({
-          title: "Texto copiado",
-          description: "Pega este texto en tu historia de Instagram",
-        });
+        if (onCaptureChart) {
+          try {
+            setIsGenerating(true);
+            await onCaptureChart(); // Generate image for user to download/use
+            navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+            toast({
+              title: "Texto copiado e imagen lista",
+              description: "Descarga la imagen y úsala en tu historia de Instagram",
+            });
+          } catch (error) {
+            navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+            toast({
+              title: "Texto copiado",
+              description: "Pega este texto en tu historia de Instagram",
+            });
+          } finally {
+            setIsGenerating(false);
+          }
+        } else {
+          navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+          toast({
+            title: "Texto copiado",
+            description: "Pega este texto en tu historia de Instagram",
+          });
+        }
         return;
     }
     
@@ -78,10 +147,11 @@ const SocialShare = ({ portfolioType, chartData }: SocialShareProps) => {
           variant="outline"
           size="sm"
           onClick={() => handleShare("twitter")}
+          disabled={isGenerating}
           className="flex items-center gap-2"
         >
           <Twitter className="h-4 w-4" />
-          Twitter/X
+          {isGenerating ? "Generando..." : "Twitter/X"}
         </Button>
         
         <Button
@@ -98,11 +168,25 @@ const SocialShare = ({ portfolioType, chartData }: SocialShareProps) => {
           variant="outline"
           size="sm" 
           onClick={() => handleShare("instagram")}
+          disabled={isGenerating}
           className="flex items-center gap-2"
         >
           <Instagram className="h-4 w-4" />
-          Instagram
+          {isGenerating ? "Generando..." : "Instagram"}
         </Button>
+        
+        {onCaptureChart && (
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleDownloadImage}
+            disabled={isGenerating}
+            className="flex items-center gap-2"
+          >
+            <Download className="h-4 w-4" />
+            {isGenerating ? "Generando..." : "Descargar imagen"}
+          </Button>
+        )}
         
         <Button
           variant="outline"

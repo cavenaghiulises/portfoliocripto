@@ -1,8 +1,8 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PortfolioAllocation, RiskLevel, InvestmentOption } from "@/types";
 import { portfolioAllocations, investmentOptions } from "@/data/investments";
-import AllocationChart from "./AllocationChart";
+import AllocationChart, { AllocationChartRef } from "./AllocationChart";
 import InvestmentCard from "./InvestmentCard";
 import Disclaimer from "./Disclaimer";
 import SocialShare from "./SocialShare";
@@ -34,7 +34,13 @@ const PortfolioRecommendation = ({
   onStartOver,
 }: PortfolioRecommendationProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const chartRef = useRef<AllocationChartRef>(null);
   const portfolio = portfolioAllocations[riskLevel];
+
+  const handleCaptureChart = async () => {
+    if (!chartRef.current) throw new Error("Chart not available");
+    return await chartRef.current.captureAsImage();
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -87,8 +93,16 @@ const PortfolioRecommendation = ({
         <h3 className="text-xl font-medium mb-6 text-center">
           Asignación de Activos Recomendada
         </h3>
-        <AllocationChart data={chartData} />
-        <SocialShare portfolioType={getRiskLevelDisplayName(riskLevel)} chartData={chartData} />
+        <AllocationChart 
+          ref={chartRef}
+          data={chartData} 
+          portfolioType={getRiskLevelDisplayName(riskLevel)}
+        />
+        <SocialShare 
+          portfolioType={getRiskLevelDisplayName(riskLevel)} 
+          chartData={chartData}
+          onCaptureChart={handleCaptureChart}
+        />
       </div>
 
       <div className="mb-12">

@@ -1,7 +1,8 @@
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { cn } from "@/lib/utils";
+import html2canvas from "html2canvas";
 
 interface AllocationChartProps {
   data: {
@@ -10,9 +11,14 @@ interface AllocationChartProps {
     color: string;
   }[];
   className?: string;
+  portfolioType?: string;
 }
 
-const AllocationChart = ({ data, className }: AllocationChartProps) => {
+export interface AllocationChartRef {
+  captureAsImage: () => Promise<string>;
+}
+
+const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ data, className, portfolioType }, ref) => {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -49,6 +55,20 @@ const AllocationChart = ({ data, className }: AllocationChartProps) => {
 
   // Sort data by value (highest first)
   const sortedData = [...data].sort((a, b) => b.value - a.value);
+
+  useImperativeHandle(ref, () => ({
+    captureAsImage: async () => {
+      if (!chartRef.current) throw new Error("Chart not ready");
+      
+      const canvas = await html2canvas(chartRef.current, {
+        backgroundColor: "#000000",
+        scale: 2,
+        useCORS: true,
+      });
+      
+      return canvas.toDataURL("image/png");
+    }
+  }));
 
   return (
     <div
@@ -100,6 +120,6 @@ const AllocationChart = ({ data, className }: AllocationChartProps) => {
       </div>
     </div>
   );
-};
+});
 
 export default AllocationChart;
