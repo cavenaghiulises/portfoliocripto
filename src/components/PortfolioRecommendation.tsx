@@ -88,7 +88,7 @@ const PortfolioRecommendation = ({
           Asignación de Activos Recomendada
         </h3>
         <AllocationChart data={chartData} />
-        <SocialShare portfolioType={getRiskLevelDisplayName(riskLevel)} />
+        <SocialShare portfolioType={getRiskLevelDisplayName(riskLevel)} chartData={chartData} />
       </div>
 
       <div className="mb-12">

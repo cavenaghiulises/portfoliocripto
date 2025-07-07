@@ -5,13 +5,18 @@ import { useToast } from "@/hooks/use-toast";
 
 interface SocialShareProps {
   portfolioType: string;
+  chartData?: {
+    name: string;
+    value: number;
+    color: string;
+  }[];
 }
 
-const SocialShare = ({ portfolioType }: SocialShareProps) => {
+const SocialShare = ({ portfolioType, chartData }: SocialShareProps) => {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
-  const shareText = `Acabo de crear mi portafolio de inversión cripto personalizado: ${portfolioType}. ¡Descubre el tuyo!`;
+  const shareText = `Acabo de crear mi portafolio de inversión cripto personalizado con "PortafolioCripto" de @cavenaghiulises.\n\nResultado: ${portfolioType}.\n\n¡Descubre el tuyo!`;
   const shareUrl = window.location.href;
 
   const handleCopyLink = async () => {

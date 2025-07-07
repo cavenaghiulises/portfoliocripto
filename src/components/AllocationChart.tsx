@@ -39,13 +39,16 @@ const AllocationChart = ({ data, className }: AllocationChartProps) => {
   const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white p-3 shadow-lg rounded-lg border border-border/50">
-          <p className="text-sm font-medium">{`${payload[0].name}: ${payload[0].value}%`}</p>
+        <div className="bg-white p-3 shadow-lg rounded-lg border border-gray-200">
+          <p className="text-sm font-medium text-black">{`${payload[0].name}: ${payload[0].value}%`}</p>
         </div>
       );
     }
     return null;
   };
+
+  // Sort data by value (highest first)
+  const sortedData = [...data].sort((a, b) => b.value - a.value);
 
   return (
     <div
@@ -61,7 +64,7 @@ const AllocationChart = ({ data, className }: AllocationChartProps) => {
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
-              data={data}
+              data={sortedData}
               cx="50%"
               cy="50%"
               labelLine={false}
@@ -74,7 +77,7 @@ const AllocationChart = ({ data, className }: AllocationChartProps) => {
               strokeWidth={2}
               stroke="#fff"
             >
-              {data.map((entry, index) => (
+              {sortedData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={entry.color} />
               ))}
             </Pie>
@@ -84,7 +87,7 @@ const AllocationChart = ({ data, className }: AllocationChartProps) => {
       </div>
 
       <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-md">
-        {data.map((item, index) => (
+        {sortedData.map((item, index) => (
           <div key={index} className="flex items-center space-x-2">
             <div
               className="w-3 h-3 rounded-full"
