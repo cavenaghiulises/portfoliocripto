@@ -61,7 +61,7 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
       if (!chartRef.current) throw new Error("Chart not ready");
       
       const canvas = await html2canvas(chartRef.current, {
-        backgroundColor: "#ffffff",
+        backgroundColor: "#000000",
         scale: 2,
         useCORS: true,
         height: chartRef.current.scrollHeight,
@@ -78,12 +78,22 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
     <div
       ref={chartRef}
       className={cn(
-        "relative flex flex-col items-center",
+        "relative flex flex-col items-center p-8 bg-background text-foreground",
         isVisible ? "opacity-100" : "opacity-0",
         "transition-opacity duration-1000",
         className
       )}
     >
+      {/* Header for captured image */}
+      <div className="text-center mb-6">
+        <h2 className="text-2xl font-bold mb-2">
+          Portafolio {portfolioType}
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          Asignación de Activos Recomendada
+        </p>
+      </div>
+
       <div className="w-full h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -117,10 +127,17 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
               className="w-3 h-3 rounded-full"
               style={{ backgroundColor: item.color }}
             />
-            <span className="text-sm font-medium">{item.name}</span>
-            <span className="text-sm font-medium ml-auto">{item.value}%</span>
+            <span className="text-sm font-medium text-foreground">{item.name}</span>
+            <span className="text-sm font-medium ml-auto text-foreground">{item.value}%</span>
           </div>
         ))}
+      </div>
+
+      {/* Footer for captured image */}
+      <div className="mt-8 text-center">
+        <p className="text-sm text-muted-foreground">
+          Portfolio created on portafoliocripto.lovable.app
+        </p>
       </div>
     </div>
   );

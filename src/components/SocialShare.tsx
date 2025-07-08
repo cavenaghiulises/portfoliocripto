@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Share2, Twitter, Instagram, Facebook, Copy, Check, Download } from "lucide-react";
+import { Share2, X, Download } from "lucide-react";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 
@@ -92,7 +92,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
             setIsGenerating(false);
           }
         }
-        url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
         break;
       case "facebook":
         url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
@@ -150,7 +150,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
           disabled={isGenerating}
           className="flex items-center gap-2"
         >
-          <Twitter className="h-4 w-4" />
+          <X className="h-4 w-4" />
           {isGenerating ? "Generando..." : "Compartir en X"}
         </Button>
         
