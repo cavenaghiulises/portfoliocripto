@@ -18,7 +18,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
   const [isGenerating, setIsGenerating] = useState(false);
   const { toast } = useToast();
 
-  const shareText = `Acabo de crear mi portafolio de inversión cripto personalizado con "PortafolioCripto" de @cavenaghiulises.\n\nResultado: ${portfolioType}.\n\n¡Descubre el tuyo!`;
+  const shareText = `Respondí un par de preguntas y obtuve mi portafolio de inversión cripto personalizado con "PortafolioCripto" de @cavenaghiulises\n\nResultado: ${portfolioType}.\n\n¡Acá podés generar el tuyo portafoliocripto.lovable.app!`;
   const shareUrl = window.location.href;
 
   const handleCopyLink = async () => {

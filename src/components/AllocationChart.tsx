@@ -136,7 +136,7 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
       {/* Footer for captured image */}
       <div className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          Portfolio created on portafoliocripto.lovable.app
+          Portafolio creado en portafoliocripto.lovable.app
         </p>
       </div>
     </div>
