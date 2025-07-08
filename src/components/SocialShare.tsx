@@ -151,28 +151,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
           className="flex items-center gap-2"
         >
           <Twitter className="h-4 w-4" />
-          {isGenerating ? "Generando..." : "Twitter/X"}
-        </Button>
-        
-        <Button
-          variant="outline" 
-          size="sm"
-          onClick={() => handleShare("facebook")}
-          className="flex items-center gap-2"
-        >
-          <Facebook className="h-4 w-4" />
-          Facebook
-        </Button>
-        
-        <Button
-          variant="outline"
-          size="sm" 
-          onClick={() => handleShare("instagram")}
-          disabled={isGenerating}
-          className="flex items-center gap-2"
-        >
-          <Instagram className="h-4 w-4" />
-          {isGenerating ? "Generando..." : "Instagram"}
+          {isGenerating ? "Generando..." : "Compartir en X"}
         </Button>
         
         {onCaptureChart && (
@@ -187,17 +166,11 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
             {isGenerating ? "Generando..." : "Descargar imagen"}
           </Button>
         )}
-        
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleCopyLink}
-          className="flex items-center gap-2"
-        >
-          {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-          {copied ? "Copiado" : "Copiar enlace"}
-        </Button>
       </div>
+      
+      <p className="text-xs text-muted-foreground mt-3 text-center">
+        portafoliocripto.lovable.app by Ulises Cavenaghi
+      </p>
     </div>
   );
 };

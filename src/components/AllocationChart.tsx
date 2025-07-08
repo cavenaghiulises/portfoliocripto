@@ -61,9 +61,13 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
       if (!chartRef.current) throw new Error("Chart not ready");
       
       const canvas = await html2canvas(chartRef.current, {
-        backgroundColor: "#000000",
+        backgroundColor: "#ffffff",
         scale: 2,
         useCORS: true,
+        height: chartRef.current.scrollHeight,
+        width: chartRef.current.scrollWidth,
+        scrollX: 0,
+        scrollY: 0,
       });
       
       return canvas.toDataURL("image/png");

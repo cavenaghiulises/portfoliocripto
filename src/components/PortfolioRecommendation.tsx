@@ -93,6 +93,11 @@ const PortfolioRecommendation = ({
         <h3 className="text-xl font-medium mb-6 text-center">
           Asignación de Activos Recomendada
         </h3>
+        <div className="mb-4">
+          <h4 className="text-lg font-medium text-center mb-2">
+            Portafolio {getRiskLevelDisplayName(riskLevel)}
+          </h4>
+        </div>
         <AllocationChart 
           ref={chartRef}
           data={chartData} 
