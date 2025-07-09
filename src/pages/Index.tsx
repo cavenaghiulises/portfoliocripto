@@ -44,12 +44,12 @@ const Index = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight animate-fadeIn" style={{
             animationDelay: "0.1s"
           }}>Diseñá tu
-Portafolio de Inversión Cripto</h1>
+Portfolio de Inversión Cripto</h1>
               <p className="text-xl text-muted-foreground mb-8 animate-fadeIn" style={{
             animationDelay: "0.2s"
           }}>
                 Respondé algunas preguntas sobre tus objetivos de inversión y tolerancia al riesgo,
-                y crearemos una recomendación de portafolio personalizada.
+                y crearemos una recomendación de portfolio personalizada.
               </p>
               <button onClick={handleStartAssessment} style={{
             animationDelay: "0.3s"
@@ -76,7 +76,7 @@ basadas en tu situación única.</p>
                       </svg>
             }, {
               title: "Obtené Recomendaciones",
-              description: "Recibí una asignación de portafolio personalizada con sugerencias de inversión específicas adaptadas a tu perfil.",
+              description: "Recibí una asignación de portfolio personalizada con sugerencias de inversión específicas adaptadas a tu perfil.",
               icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                         <path d="M21 8v13H3V8" />
                         <path d="M1 3h22v5H1z" />
@@ -84,7 +84,7 @@ basadas en tu situación única.</p>
                       </svg>
             }, {
               title: "Acción!",
-              description: "Implementá tu estrategia de portafolio personalizada si te parece adecuada, sabiendo que está alineada con tus objetivos financieros.",
+              description: "Implementá tu estrategia de portfolio personalizada si te parece adecuada, sabiendo que está alineada con tus objetivos financieros.",
               icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                         <path d="M12 2v20" />
                         <path d="m17 5-5-3-5 3" />
@@ -121,7 +121,7 @@ basadas en tu situación única.</p>
             animationFillMode: "forwards"
           }}>
                 <h2 className="text-2xl font-semibold mb-4">¿Listo para diseñar tu portfolio de inversión cripto?</h2>
-                <p className="text-muted-foreground mb-6">Empezá a construir tu portafolio de inversión hoy!</p>
+                <p className="text-muted-foreground mb-6">Empezá a construir tu portfolio de inversión hoy!</p>
                 <button onClick={handleStartAssessment} className="px-6 py-3 rounded-full transition-colors shadow-sm text-lg text-slate-50 bg-blue-600 hover:bg-blue-500">
                   Iniciar Evaluación de Riesgo
                 </button>

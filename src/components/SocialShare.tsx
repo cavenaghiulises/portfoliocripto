@@ -18,7 +18,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
   const [isGenerating, setIsGenerating] = useState(false);
   const { toast } = useToast();
 
-  const shareText = `Respondí un par de preguntas y obtuve mi portafolio de inversión cripto personalizado con "PortafolioCripto" de @cavenaghiulises\n\nResultado: ${portfolioType}.\n\n¡Acá podés generar el tuyo portafoliocripto.lovable.app!`;
+  const shareText = `Respondí un par de preguntas y obtuve mi portfolio de inversión cripto personalizado con "PortfolioCripto" de @cavenaghiulises\n\nResultado: ${portfolioType}.\n\n¡Acá podés generar el tuyo portfoliocripto.lovable.app!`;
   const shareUrl = window.location.href;
 
   const handleCopyLink = async () => {
@@ -48,7 +48,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
       
       // Create download link
       const link = document.createElement("a");
-      link.download = `portafolio-cripto-${portfolioType.toLowerCase().replace(/\s+/g, "-")}.png`;
+      link.download = `portfolio-cripto-${portfolioType.toLowerCase().replace(/\s+/g, "-")}.png`;
       link.href = imageDataUrl;
       document.body.appendChild(link);
       link.click();
@@ -56,7 +56,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
       
       toast({
         title: "Imagen descargada",
-        description: "La imagen de tu portafolio ha sido descargada",
+        description: "La imagen de tu portfolio ha sido descargada",
       });
     } catch (error) {
       toast({
@@ -139,7 +139,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
       </div>
       
       <p className="text-muted-foreground mb-4">
-        Comparte tu portafolio personalizado con tus amigos
+        Comparte tu portfolio personalizado con tus amigos
       </p>
       
       <div className="flex flex-wrap gap-3">
@@ -169,7 +169,7 @@ const SocialShare = ({ portfolioType, chartData, onCaptureChart }: SocialSharePr
       </div>
       
       <p className="text-xs text-muted-foreground mt-3 text-center">
-        portafoliocripto.lovable.app by Ulises Cavenaghi
+        portfoliocripto.lovable.app by Ulises Cavenaghi
       </p>
     </div>
   );

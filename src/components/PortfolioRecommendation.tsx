@@ -79,10 +79,10 @@ const PortfolioRecommendation = ({
       
       <div className="text-center mb-12">
         <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-          Tu Portafolio Personalizado
+          Tu Portfolio Personalizado
         </div>
         <h2 className="text-3xl font-semibold mb-3">
-          Portafolio {getRiskLevelDisplayName(riskLevel)}
+          Portfolio {getRiskLevelDisplayName(riskLevel)}
         </h2>
         <p className="text-muted-foreground max-w-xl mx-auto">
           {portfolio.description}
@@ -95,7 +95,7 @@ const PortfolioRecommendation = ({
         </h3>
         <div className="mb-4">
           <h4 className="text-lg font-medium text-center mb-2">
-            Portafolio {getRiskLevelDisplayName(riskLevel)}
+            Portfolio {getRiskLevelDisplayName(riskLevel)}
           </h4>
         </div>
         <AllocationChart 

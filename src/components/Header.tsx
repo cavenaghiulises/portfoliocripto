@@ -13,7 +13,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
           <h1 className="text-xl font-medium">
-            <span className={cn("font-semibold", scrolled ? "text-black" : "text-primary")}>PortafolioCripto</span>
+            <span className={cn("font-semibold", scrolled ? "text-black" : "text-primary")}>PortfolioCripto</span>
           </h1>
         </div>
       </div>

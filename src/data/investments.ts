@@ -74,7 +74,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 0,
     stablecoins: 65,
     memecoins: 0,
-    description: "Portafolio ultra conservador que prioriza máxima preservación del capital con mínima volatilidad. Ideal para principiantes o inversores muy cautelosos.",
+    description: "Portfolio ultra conservador que prioriza máxima preservación del capital con mínima volatilidad. Ideal para principiantes o inversores muy cautelosos.",
     diversificationTips: [
       "Mantené la mayoría de tu inversión en stablecoins para protección completa",
       "Usá Bitcoin y Ethereum solo como pequeña exposición al crecimiento cripto",
@@ -90,13 +90,13 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 0,
     stablecoins: 55,
     memecoins: 0,
-    description: "Portafolio muy conservador con exposición limitada a Bitcoin y Ethereum, manteniendo la mayoría en stablecoins para estabilidad.",
+    description: "Portfolio muy conservador con exposición limitada a Bitcoin y Ethereum, manteniendo la mayoría en stablecoins para estabilidad.",
     diversificationTips: [
       "Mantené más del 50% en stablecoins para estabilidad",
       "Limitá la exposición a Bitcoin y Ethereum únicamente",
       "Considerá DCA (Dollar Cost Averaging) para reducir volatilidad de entrada",
       "Evitá tokens de alto riesgo y proyectos experimentales",
-      "Revisá tu portafolio mensualmente pero evitá cambios frecuentes"
+      "Revisá tu portfolio mensualmente pero evitá cambios frecuentes"
     ]
   },
   Conservative: {
@@ -106,7 +106,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 0,
     stablecoins: 40,
     memecoins: 0,
-    description: "Portafolio conservador equilibrado entre las principales criptomonedas y stablecoins, evitando activos especulativos.",
+    description: "Portfolio conservador equilibrado entre las principales criptomonedas y stablecoins, evitando activos especulativos.",
     diversificationTips: [
       "Mantené un balance sólido entre Bitcoin, Ethereum y stablecoins",
       "Considerá el staking de ETH para generar rendimientos adicionales",
@@ -122,7 +122,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 15,
     stablecoins: 25,
     memecoins: 0,
-    description: "Portafolio conservador con ligera exposición a altcoins establecidas, manteniendo una base sólida en Bitcoin y Ethereum.",
+    description: "Portfolio conservador con ligera exposición a altcoins establecidas, manteniendo una base sólida en Bitcoin y Ethereum.",
     diversificationTips: [
       "Introducí altcoins establecidas como Solana, Cardano o Avalanche",
       "Mantené Bitcoin y Ethereum como tu base principal",
@@ -138,7 +138,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 35,
     stablecoins: 10,
     memecoins: 5,
-    description: "Portafolio balanceado que combina estabilidad y crecimiento, con exposición moderada a altcoins y mínima a memecoins.",
+    description: "Portfolio balanceado que combina estabilidad y crecimiento, con exposición moderada a altcoins y mínima a memecoins.",
     diversificationTips: [
       "Balanceá entre seguridad (BTC/ETH) y oportunidades de crecimiento",
       "Diversificá altcoins entre diferentes sectores (DeFi, Layer 1, etc.)",
@@ -154,7 +154,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 45,
     stablecoins: 5,
     memecoins: 5,
-    description: "Portafolio enfocado en crecimiento con mayor exposición a altcoins prometedoras, manteniendo una base en las principales criptomonedas.",
+    description: "Portfolio enfocado en crecimiento con mayor exposición a altcoins prometedoras, manteniendo una base en las principales criptomonedas.",
     diversificationTips: [
       "Explorá altcoins de diferentes categorías: DeFi, Gaming, AI, Layer 2",
       "Mantené Bitcoin y Ethereum como ancla de estabilidad",
@@ -170,7 +170,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 50,
     stablecoins: 5,
     memecoins: 10,
-    description: "Portafolio agresivo con fuerte exposición a altcoins y mayor tolerancia a memecoins, buscando maximizar oportunidades de crecimiento.",
+    description: "Portfolio agresivo con fuerte exposición a altcoins y mayor tolerancia a memecoins, buscando maximizar oportunidades de crecimiento.",
     diversificationTips: [
       "Diversificá ampliamente entre altcoins de alto potencial",
       "Considerá inversiones en proyectos early-stage con due diligence",
@@ -186,7 +186,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 50,
     stablecoins: 5,
     memecoins: 15,
-    description: "Portafolio agresivo que maximiza exposición a altcoins y memecoins, ideal para inversores experimentados con alta tolerancia al riesgo.",
+    description: "Portfolio agresivo que maximiza exposición a altcoins y memecoins, ideal para inversores experimentados con alta tolerancia al riesgo.",
     diversificationTips: [
       "Mantené Bitcoin y Ethereum como mínima estabilidad",
       "Explorá activamente nuevos proyectos y narrativas del mercado",
@@ -202,7 +202,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 55,
     stablecoins: 0,
     memecoins: 20,
-    description: "Portafolio muy agresivo con máxima exposición a altcoins y memecoins, eliminando stablecoins para maximizar potencial de crecimiento.",
+    description: "Portfolio muy agresivo con máxima exposición a altcoins y memecoins, eliminando stablecoins para maximizar potencial de crecimiento.",
     diversificationTips: [
       "Enfocate en altcoins de menor capitalización con alto potencial",
       "Participá activamente en comunidades y ecosistemas de tus inversiones",
@@ -218,7 +218,7 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     altcoins: 60,
     stablecoins: 0,
     memecoins: 25,
-    description: "Portafolio ultra agresivo para traders experimentados, con mínima exposición a Bitcoin/Ethereum y máxima a oportunidades especulativas.",
+    description: "Portfolio ultra agresivo para traders experimentados, con mínima exposición a Bitcoin/Ethereum y máxima a oportunidades especulativas.",
     diversificationTips: [
       "Explorá oportunidades en micro-caps y proyectos pre-launch",
       "Mantené solo exposición mínima a Bitcoin y Ethereum",

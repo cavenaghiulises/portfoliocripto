@@ -87,7 +87,7 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
       {/* Header for captured image */}
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold mb-2">
-          Portafolio {portfolioType}
+          Portfolio {portfolioType}
         </h2>
         <p className="text-sm text-muted-foreground">
           Asignación de Activos Recomendada
@@ -136,7 +136,7 @@ const AllocationChart = forwardRef<AllocationChartRef, AllocationChartProps>(({ 
       {/* Footer for captured image */}
       <div className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          Portafolio creado en portafoliocripto.lovable.app
+          Portfolio creado en portfoliocripto.lovable.app
         </p>
       </div>
     </div>
