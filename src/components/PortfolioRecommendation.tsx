@@ -86,6 +86,42 @@ const PortfolioRecommendation = ({
         
         
         <AllocationChart ref={chartRef} data={chartData} portfolioType={getRiskLevelDisplayName(riskLevel)} />
+        
+        {/* Contact Section */}
+        <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mt-8 mb-8">
+          <h3 className="text-lg font-semibold text-primary mb-4">¿No sabes como comenzar o dónde comprar estas criptos?</h3>
+          <p className="text-foreground/90 mb-4">
+            Puedes contactarme para una asesoría personalizada y te ayudo con todas las dudas que tengas.
+          </p>
+          <p className="text-foreground/90 mb-3">Puedes contactarme por los siguientes medios:</p>
+          <div className="space-y-2">
+            <div>
+              <strong>X/Twitter:</strong>{" "}
+              <a href="https://x.com/cavenaghiulises" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                https://x.com/cavenaghiulises
+              </a>
+            </div>
+            <div>
+              <strong>Telegram:</strong>{" "}
+              <a href="https://t.me/cavenaghiulises" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                https://t.me/cavenaghiulises
+              </a>
+            </div>
+            <div>
+              <strong>LinkedIn:</strong>{" "}
+              <a href="https://www.linkedin.com/in/cavenaghiulises/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                https://www.linkedin.com/in/cavenaghiulises/
+              </a>
+            </div>
+            <div>
+              <strong>Email:</strong>{" "}
+              <a href="mailto:ulacave@gmail.com" className="text-primary hover:underline">
+                ulacave@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+        
         <SocialShare portfolioType={getRiskLevelDisplayName(riskLevel)} chartData={chartData} onCaptureChart={handleCaptureChart} />
       </div>
 
