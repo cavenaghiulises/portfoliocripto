@@ -124,10 +124,10 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     memecoins: 0,
     description: "Portfolio conservador con ligera exposición a altcoins establecidas, manteniendo una base sólida en Bitcoin y Ethereum.",
     diversificationTips: [
-      "Introducí altcoins establecidas como Solana, Cardano o Avalanche",
+      "Considerá altcoins establecidas solo después de investigación profunda",
       "Mantené Bitcoin y Ethereum como tu base principal",
-      "Investigá thoroughly antes de agregar nuevos altcoins",
-      "Considerá proyectos con casos de uso claros y adopción real",
+      "Investigá thoroughly antes de agregar cualquier altcoin",
+      "Priorizá proyectos con casos de uso claros y adopción real",
       "Mantené stablecoins como colchón de seguridad"
     ]
   },
@@ -156,10 +156,10 @@ export const portfolioAllocations: Record<RiskLevel, PortfolioAllocation> = {
     memecoins: 5,
     description: "Portfolio enfocado en crecimiento con mayor exposición a altcoins prometedoras, manteniendo una base en las principales criptomonedas.",
     diversificationTips: [
-      "Explorá altcoins de diferentes categorías: DeFi, Gaming, AI, Layer 2",
+      "Explorá altcoins de diferentes categorías con investigación previa",
       "Mantené Bitcoin y Ethereum como ancla de estabilidad",
       "Investigá proyectos con roadmaps claros y equipos sólidos",
-      "Considerá participar en stakings y farming de DeFi",
+      "Considerá participar en stakings de activos establecidos",
       "Establecé targets de toma de ganancias para altcoins exitosas"
     ]
   },
