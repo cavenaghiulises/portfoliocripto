@@ -176,7 +176,7 @@ const PortfolioRecommendation = ({
             <h4 className="text-lg font-medium mb-4">Altcoins ({portfolio.altcoins}%)</h4>
             <div className="p-4 border border-border rounded-xl bg-card mb-4">
               <p className="text-foreground/80">
-                Categoría para criptomonedas alternativas diversas del ecosistema blockchain
+                Categoría general para diversificación en el ecosistema blockchain. No se recomiendan altcoins específicas - la elección depende de tu investigación personal.
               </p>
             </div>
           </div>}
