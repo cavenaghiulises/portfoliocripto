@@ -89,11 +89,11 @@ const PortfolioRecommendation = ({
         
         {/* Contact Section */}
         <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mt-8 mb-8">
-          <h3 className="text-lg font-semibold text-primary mb-4">¿No sabes como comenzar o dónde comprar estas criptos?</h3>
+          <h3 className="text-lg font-semibold bg-warning/20 text-warning px-3 py-2 rounded-lg mb-4 inline-block">¿No sabes como comenzar o dónde comprar estas criptos?</h3>
           <p className="text-foreground/90 mb-4">
             Puedes contactarme para una asesoría personalizada y te ayudo con todas las dudas que tengas.
           </p>
-          <p className="text-foreground/90 mb-3">Puedes contactarme por los siguientes medios:</p>
+          <p className="text-foreground/90 mb-3">Medios de contacto directos:</p>
           <div className="space-y-2">
             <div>
               <strong>X/Twitter:</strong>{" "}
