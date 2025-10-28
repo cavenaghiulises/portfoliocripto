@@ -19,11 +19,11 @@
     "primaryCategory": "education",
     "tags": ["portfolio", "education"],
     "noindex": true
-  }
-},
-"metadata": {
+  },
+  "metadata": {
     "name": "Portfolio Cripto",
     "description": "Mini app educativa que te ayuda a entender y diversificar tu portfolio cripto.",
     "iconUrl": "https://portfoliocripto.lovable.app/favicon.ico",
     "homeUrl": "https://portfoliocripto.vercel.app"
   }
+}
