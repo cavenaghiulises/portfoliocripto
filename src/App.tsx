@@ -30,16 +30,13 @@ const App = () => {
       return false;
     };
 
-    // 1) intento inmediato
     if (tryReady()) return;
 
-    // 2) reintentos hasta 15s (por si el SDK tarda en inyectarse)
     const t0 = Date.now();
     const id = setInterval(() => {
       if (tryReady() || Date.now() - t0 > 15000) clearInterval(id);
     }, 250);
 
-    // 3) intento extra al load
     const onLoad = () => { tryReady(); };
     window.addEventListener("load", onLoad);
 
