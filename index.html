@@ -9,11 +9,37 @@
     <meta name="author" content="Lovable" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
-
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Base Mini App SDK -->
+<script src="https://miniapp-assets.base.org/sdk.js"></script>
+
+<!-- Fallback: marcar la app como lista cuando cargue la página -->
+<script>
+  window.addEventListener('load', function () {
+    const mark = (m) => console.log('[miniapp:index.html] ' + m);
+    function getSdk() {
+      return window.sdk || window.miniApp?.sdk || window.miniapp?.sdk || window.basekit?.sdk || window.basekit;
+    }
+    function tryReady() {
+      const sdk = getSdk();
+      if (sdk && sdk.actions && typeof sdk.actions.ready === 'function') {
+        sdk.actions.ready();
+        mark('actions.ready() called from index.html');
+        return true;
+      }
+      return false;
+    }
+    if (!tryReady()) {
+      const t0 = Date.now();
+      const id = setInterval(function () {
+        if (tryReady() || Date.now() - t0 > 15000) clearInterval(id);
+      }, 300);
+    }
+  });
+</script>
   </body>
 </html>
