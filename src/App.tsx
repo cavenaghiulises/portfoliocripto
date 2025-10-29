@@ -11,22 +11,32 @@ const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
-    // Intenta llamar a sdk.actions.ready() cuando el SDK esté disponible
+    const getSdk = () =>
+      (window as any)?.sdk ||
+      (window as any)?.miniApp?.sdk ||
+      (window as any)?.basekit?.sdk ||
+      (window as any)?.basekit;
+
     const tryReady = () => {
-      const sdk = (window as any)?.sdk || (window as any)?.miniApp?.sdk;
+      const sdk = getSdk();
       if (sdk?.actions?.ready) {
-        sdk.actions.ready();
+        sdk.actions.ready(); // 👈 avisa al visor de Base que la UI está lista
         return true;
       }
       return false;
     };
 
-    // Llama de inmediato y reintenta un par de veces si el SDK aún no cargó
     if (!tryReady()) {
+      const started = Date.now();
       const id = setInterval(() => {
-        if (tryReady()) clearInterval(id);
-      }, 200);
-      setTimeout(() => clearInterval(id), 5000);
+        if (tryReady() || Date.now() - started > 15000) clearInterval(id);
+      }, 250);
+      const onLoad = () => { tryReady(); };
+      window.addEventListener("load", onLoad);
+      return () => {
+        clearInterval(id);
+        window.removeEventListener("load", onLoad);
+      };
     }
   }, []);
 
@@ -38,7 +48,6 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
