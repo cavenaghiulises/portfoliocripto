@@ -4,41 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PortfolioCripto</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <meta name="description" content="Portfolio recomendado según tu perfil cripto" />
+    <meta name="author" content="SEED Nodes" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
+
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+
+    <!-- NO TOCAR: motor de Lovable -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Base Mini App SDK -->
-<script src="https://miniapp-assets.base.org/sdk.js"></script>
 
-<!-- Fallback: marcar la app como lista cuando cargue la página -->
-<script>
-  window.addEventListener('load', function () {
-    const mark = (m) => console.log('[miniapp:index.html] ' + m);
-    function getSdk() {
-      return window.sdk || window.miniApp?.sdk || window.miniapp?.sdk || window.basekit?.sdk || window.basekit;
-    }
-    function tryReady() {
-      const sdk = getSdk();
-      if (sdk && sdk.actions && typeof sdk.actions.ready === 'function') {
-        sdk.actions.ready();
-        mark('actions.ready() called from index.html');
-        return true;
-      }
-      return false;
-    }
-    if (!tryReady()) {
-      const t0 = Date.now();
-      const id = setInterval(function () {
-        if (tryReady() || Date.now() - t0 > 15000) clearInterval(id);
-      }, 300);
-    }
-  });
-</script>
+    <!-- Fallback: marcar la app como lista cuando el SDK de Base esté disponible -->
+    <script>
+      (function () {
+        const mark = (m) => console.log('[miniapp:index.html] ' + m);
+
+        function getSdk() {
+          return (
+            window.sdk ||
+            window.miniApp?.sdk ||
+            window.miniapp?.sdk ||
+            window.basekit?.sdk ||
+            window.basekit
+          );
+        }
+
+        function tryReady() {
+          const sdk = getSdk();
+          if (sdk && sdk.actions && typeof sdk.actions.ready === 'function') {
+            sdk.actions.ready();
+            mark('actions.ready() called from index.html');
+            return true;
+          }
+          return false;
+        }
+
+        // Intento inmediato y reintentos hasta 15s
+        if (!tryReady()) {
+          const t0 = Date.now();
+          const id = setInterval(() => {
+            if (tryReady() || Date.now() - t0 > 15000) clearInterval(id);
+          }, 200);
+
+          window.addEventListener('load', () => tryReady());
+          document.addEventListener('DOMContentLoaded', () => tryReady());
+        }
+      })();
+    </script>
   </body>
 </html>
