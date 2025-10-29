@@ -11,33 +11,42 @@ const queryClient = new QueryClient();
 
 const App = () => {
   useEffect(() => {
+    const mark = (msg: string) => console.log(`[miniapp] ${msg}`);
+
     const getSdk = () =>
       (window as any)?.sdk ||
       (window as any)?.miniApp?.sdk ||
+      (window as any)?.miniapp?.sdk ||
       (window as any)?.basekit?.sdk ||
       (window as any)?.basekit;
 
     const tryReady = () => {
       const sdk = getSdk();
       if (sdk?.actions?.ready) {
-        sdk.actions.ready(); // 👈 avisa al visor de Base que la UI está lista
+        sdk.actions.ready();
+        mark("actions.ready() called");
         return true;
       }
       return false;
     };
 
-    if (!tryReady()) {
-      const started = Date.now();
-      const id = setInterval(() => {
-        if (tryReady() || Date.now() - started > 15000) clearInterval(id);
-      }, 250);
-      const onLoad = () => { tryReady(); };
-      window.addEventListener("load", onLoad);
-      return () => {
-        clearInterval(id);
-        window.removeEventListener("load", onLoad);
-      };
-    }
+    // 1) intento inmediato
+    if (tryReady()) return;
+
+    // 2) reintentos hasta 15s (por si el SDK tarda en inyectarse)
+    const t0 = Date.now();
+    const id = setInterval(() => {
+      if (tryReady() || Date.now() - t0 > 15000) clearInterval(id);
+    }, 250);
+
+    // 3) intento extra al load
+    const onLoad = () => { tryReady(); };
+    window.addEventListener("load", onLoad);
+
+    return () => {
+      clearInterval(id);
+      window.removeEventListener("load", onLoad);
+    };
   }, []);
 
   return (
